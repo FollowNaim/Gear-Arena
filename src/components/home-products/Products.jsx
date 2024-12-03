@@ -1,11 +1,11 @@
 import Product from "./Product";
 
-function Products() {
+function Products({ products }) {
   return (
     <div className="grid grid-cols-3 gap-4 mt-8 px-4">
-      <Product />
-      <Product />
-      <Product />
+      {products.map((product) => (
+        <Product product={product} key={product._id} />
+      ))}
     </div>
   );
 }
