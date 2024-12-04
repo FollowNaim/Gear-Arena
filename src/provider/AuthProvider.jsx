@@ -12,7 +12,7 @@ import { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
 

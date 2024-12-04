@@ -6,6 +6,7 @@ function ProductDetails() {
     image,
     itemName,
     categoryName,
+    customization,
     description,
     price,
     rating,
@@ -42,12 +43,12 @@ function ProductDetails() {
             <div className="border-y py-2 border-dashed border-destructive/50 flex items-center gap-4">
               <h3 className="text-destructive">Customization : </h3>
               <div className="flex items-center gap-2">
-                <p> Team Colors</p>
+                <p> {customization}</p>
               </div>
             </div>
           </div>
           <div className="mt-5 flex items-center gap-8">
-            <p>Processing Time : </p> <p>{processingTime}</p>
+            <p>Processing Time : </p> <p>{processingTime} days</p>
           </div>
           <div className="mt-6 flex items-center gap-8">
             <p className=" w-fit rounded-3xl flex items-center gap-2">

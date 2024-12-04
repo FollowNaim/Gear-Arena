@@ -6,6 +6,7 @@ import MyEquipment from "@/pages/MyEquipment";
 import ProductDetails from "@/pages/ProductDetails";
 import SignIn from "@/pages/SIgnIn";
 import SignUp from "@/pages/SignUp";
+import UpdateEquipment from "@/pages/UpdateEquipment";
 import { createBrowserRouter } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -24,6 +25,16 @@ export const routes = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <ProductDetails />
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/products/update/:id",
+        element: (
+          <PrivateRoutes>
+            <UpdateEquipment />
           </PrivateRoutes>
         ),
         loader: ({ params }) =>

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import {
@@ -11,15 +12,22 @@ import {
 
 export default function MyProductCard({ product }) {
   const { _id, image, itemName, categoryName, description, price, rating } =
-    product || {
-      _id: 1,
-      itemName: "hello",
-      image: "https://i.ibb.co.com/T25tvLM/image.png",
-      categoryName: "black",
-      description: "djklalkjna",
-      price: "50",
-      rating: "4.9",
-    };
+    product;
+  const handleDelete = () => {
+    const check = confirm("are your sure? you want to delete?");
+    if (check) {
+      toast.promise(
+        fetch(`http://localhost:5000/products/${_id}`, {
+          method: "DELETE",
+        })
+      ),
+        {
+          loading: "Equipment Deleting...",
+          success: <b>Equipment Deleted!</b>,
+          error: (err) => <b>{err.message || "Could not delete!"}</b>,
+        };
+    }
+  };
   return (
     <Card className="flex flex-col">
       <CardHeader className="grow">
@@ -47,10 +55,20 @@ export default function MyProductCard({ product }) {
           <p className="pl-3">Rating : {rating}</p>
         </div>
       </CardContent>
-      <CardFooter>
-        <Link to={`/products/${_id}`}>
-          <Button className="">View Details</Button>
+      <CardFooter className="flex items-center gap-4">
+        <Link to={`/products/update/${_id}`}>
+          <Button size="lg" className="">
+            Update
+          </Button>
         </Link>
+
+        <Button
+          onClick={handleDelete}
+          size="lg"
+          className="bg-red-100 text-red-700"
+        >
+          Delete
+        </Button>
       </CardFooter>
     </Card>
   );

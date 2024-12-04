@@ -19,12 +19,26 @@ import {
 import { AuthContext } from "@/provider/AuthProvider";
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
-export default function AddEquipment() {
+export default function UpdateEquipment() {
   const { user } = useContext(AuthContext);
   const [inStock, setInStock] = useState("instock");
   const navigate = useNavigate();
+  const {
+    _id,
+    itemName,
+    categoryName,
+    image,
+    description,
+    price,
+    rating,
+    customization,
+    processingTime,
+    stockStatus,
+    userEmail,
+    userName,
+  } = useLoaderData();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -34,8 +48,8 @@ export default function AddEquipment() {
     const description = form.description.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const customization = form.rating.value;
-    const processing = form.rating.value;
+    const customization = form.customization.value;
+    const processing = form.processing.value;
     const available = form.available.value;
     const product = {
       itemName: name,
@@ -45,25 +59,22 @@ export default function AddEquipment() {
       price,
       rating,
       customization,
-
       processingTime: processing,
       stockStatus: { availability: inStock, quantity: available },
-      userEmail: user.email,
-      userName: user.displayName || "N/A",
     };
     toast
       .promise(
-        fetch("http://localhost:5000/products", {
-          method: "POST",
+        fetch(`http://localhost:5000/products/${_id}`, {
+          method: "PATCH",
           headers: {
             "content-type": "application/json",
           },
           body: JSON.stringify(product),
         }),
         {
-          loading: "Equipment adding...",
-          success: <b>Equipment added!</b>,
-          error: (err) => <b>{err.message || "Could not add!"}</b>,
+          loading: "Equipment updating...",
+          success: <b>Equipment Updated!</b>,
+          error: (err) => <b>{err.message || "Could not update!"}</b>,
         }
       )
       .then((res) => navigate("/all-sports"));
@@ -73,7 +84,7 @@ export default function AddEquipment() {
       <form className="w-full " onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl">Add Equipment</CardTitle>
+            <CardTitle className="text-2xl">Update Equipment</CardTitle>
             <CardDescription>
               Add a new user to the admin dashboard.
             </CardDescription>
@@ -85,12 +96,14 @@ export default function AddEquipment() {
                 <Input
                   name="name"
                   id="name"
+                  defaultValue={itemName}
                   placeholder="Enter the item's name"
                 />
               </div>
               <div className="grid gap-2 w-full">
                 <Label htmlFor="category">Category Name</Label>
                 <Input
+                  defaultValue={categoryName}
                   name="category"
                   id="category"
                   type="text"
@@ -103,6 +116,7 @@ export default function AddEquipment() {
                 <Label htmlFor="image">Image</Label>
                 <Input
                   name="image"
+                  defaultValue={image}
                   id="image"
                   type="url"
                   placeholder="Enter the item's photo URL"
@@ -113,6 +127,7 @@ export default function AddEquipment() {
                 <Input
                   name="description"
                   id="description"
+                  defaultValue={description}
                   type="text"
                   placeholder="Enter the description."
                 />
@@ -124,6 +139,7 @@ export default function AddEquipment() {
                 <Input
                   name="price"
                   step="0.01"
+                  defaultValue={price}
                   id="price"
                   type="number"
                   placeholder="Enter the item's price"
@@ -134,6 +150,7 @@ export default function AddEquipment() {
                 <Input
                   step="0.01"
                   name="rating"
+                  defaultValue={rating}
                   id="rating"
                   type="number"
                   placeholder="Enter the Rating."
@@ -145,6 +162,7 @@ export default function AddEquipment() {
                 <Label htmlFor="customization">Customization</Label>
                 <Input
                   name="customization"
+                  defaultValue={customization}
                   id="customization"
                   type="text"
                   placeholder="Enter the item's customization."
@@ -154,7 +172,9 @@ export default function AddEquipment() {
                 <Label htmlFor="processing">Processing Time (in day)</Label>
                 <Input
                   name="processing"
+                  defaultValue={processingTime}
                   id="processing"
+                  step="0.01"
                   type="number"
                   placeholder="Enter the processing time."
                 />
@@ -166,7 +186,7 @@ export default function AddEquipment() {
                 <Select
                   id="status"
                   onValueChange={(val) => setInStock(val)}
-                  defaultValue="instock"
+                  defaultValue={stockStatus.availability || "instock"}
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Select a role" />
@@ -183,6 +203,7 @@ export default function AddEquipment() {
                 <Input
                   name="available"
                   id="available"
+                  defaultValue={stockStatus.quantity}
                   type="number"
                   placeholder="Enter the available quantity."
                 />
@@ -190,7 +211,7 @@ export default function AddEquipment() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full">Add Equipment</Button>
+            <Button className="w-full">Update Equipment</Button>
           </CardFooter>
         </Card>
       </form>
