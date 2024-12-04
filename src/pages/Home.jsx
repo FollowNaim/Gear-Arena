@@ -1,5 +1,6 @@
 import Products from "@/components/home-products/Products";
 import Sliders from "@/components/slider/Sliders";
+import WhyChoose from "@/components/why-choose/WhyChoose";
 import { useLoaderData } from "react-router-dom";
 
 function Home() {
@@ -9,6 +10,7 @@ function Home() {
       {/* <Hero /> */}
       <Sliders />
       <Products products={products} />
+      <WhyChoose />
     </div>
   );
 }

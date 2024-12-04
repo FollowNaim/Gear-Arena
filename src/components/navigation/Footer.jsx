@@ -8,7 +8,7 @@ import payPhoto from "@/assets/payment.png";
 import { MdOutlineDateRange } from "react-icons/md";
 function Footer() {
   return (
-    <div className="border-t border-dashed border-border">
+    <div className="border-t border-dashed border-black/30">
       <div className="container px-4 grid grid-cols-12 pt-14 pb-8">
         <div className="col-span-3 pr-20 flex flex-col">
           <h4 className="text-2xl font-bold">Gear Arena</h4>
