@@ -1,5 +1,4 @@
 import check from "@/assets/check.png";
-import photo from "@/assets/p1.jpg";
 import { useLoaderData } from "react-router-dom";
 function ProductDetails() {
   const {
@@ -26,22 +25,22 @@ function ProductDetails() {
           <h3 className="text-4xl font-bold">{itemName}</h3>
           <p className="text-muted-foreground pt-3">{description}</p>
           <div className=" rounded-md mt-5">
-            <div className="flex items-center border border-accent rounded-t-md">
-              <p className="border-r border-accent p-3 w-44">
+            <div className="flex items-center border border-destructive rounded-t-md">
+              <p className="border-r border-destructive p-3 w-44">
                 Category : {categoryName}
               </p>
-              <p className="pl-6 border-accent">Price : {price}$</p>
+              <p className="pl-6 border-destructive">Price : {price}$</p>
             </div>
-            <div className="flex items-center border-x border-b border-accent rounded-b-md">
-              <p className="border-r border-accent p-3 w-44">
+            <div className="flex items-center border-x border-b border-destructive rounded-b-md">
+              <p className="border-r border-destructive p-3 w-44">
                 Rating : {rating}
               </p>
-              <p className="pl-6 border-accent">Price : {price}$</p>
+              <p className="pl-6 border-destructive">Price : {price}$</p>
             </div>
           </div>
           <div className="mt-6">
-            <div className="border-y py-2 border-dashed border-accent/50 flex items-center gap-4">
-              <h3 className="text-accent">Customization : </h3>
+            <div className="border-y py-2 border-dashed border-destructive/50 flex items-center gap-4">
+              <h3 className="text-destructive">Customization : </h3>
               <div className="flex items-center gap-2">
                 <p> Team Colors</p>
               </div>
@@ -57,7 +56,7 @@ function ProductDetails() {
             <p>
               <h4>
                 only{" "}
-                <span className="text-accent">
+                <span className="text-destructive">
                   {stockStatus.quantity} items
                 </span>{" "}
                 left!
