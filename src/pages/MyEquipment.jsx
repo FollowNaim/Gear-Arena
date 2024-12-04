@@ -28,7 +28,13 @@ function MyEquipment() {
           {!products.length
             ? "No Data Available"
             : products.map((product) => (
-                <MyProductCard roductCard key={product._id} product={product} />
+                <MyProductCard
+                  roductCard
+                  key={product._id}
+                  product={product}
+                  setProducts={setProducts}
+                  products={products}
+                />
               ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { AuthContext } from "@/provider/AuthProvider";
 import { useContext } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "../ui/button";
 
 function Nav() {
@@ -22,19 +22,19 @@ function Nav() {
           </Link>
         </div>
         <div>
-          <ul className="flex items-center gap-4">
-            <Link to={"/"}>
+          <ul className="flex items-center gap-6" id="navlinks">
+            <NavLink to={"/"}>
               <li>Home</li>
-            </Link>
-            <Link to={"/all-sports"}>
+            </NavLink>
+            <NavLink to={"/all-sports"}>
               <li>All Sports</li>
-            </Link>
-            <Link to={"/add-equipment"}>
+            </NavLink>
+            <NavLink to={"/add-equipment"}>
               <li>Add Equiement</li>
-            </Link>
-            <Link to={"/my-equipment"}>
+            </NavLink>
+            <NavLink to={"/my-equipment"}>
               <li>My Equipement</li>
-            </Link>
+            </NavLink>
           </ul>
         </div>
         {!user && (

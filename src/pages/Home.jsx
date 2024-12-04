@@ -1,12 +1,13 @@
-import Hero from "@/components/hero/Hero";
 import Products from "@/components/home-products/Products";
+import Sliders from "@/components/slider/Sliders";
 import { useLoaderData } from "react-router-dom";
 
 function Home() {
   const products = useLoaderData();
   return (
     <div className="mb-20">
-      <Hero />
+      {/* <Hero /> */}
+      <Sliders />
       <Products products={products} />
     </div>
   );

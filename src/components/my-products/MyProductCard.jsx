@@ -10,29 +10,41 @@ import {
   CardTitle,
 } from "../ui/card";
 
-export default function MyProductCard({ product }) {
-  const { _id, image, itemName, categoryName, description, price, rating } =
-    product;
-  const handleDelete = () => {
+export default function MyProductCard({ product, setProducts, products }) {
+  const {
+    _id,
+    image,
+    itemName,
+    categoryName,
+    description,
+    price,
+    rating,
+    stockStatus,
+  } = product;
+  const handleDelete = (id) => {
     const check = confirm("are your sure? you want to delete?");
     if (check) {
-      toast.promise(
-        fetch(`http://localhost:5000/products/${_id}`, {
-          method: "DELETE",
-        })
-      ),
-        {
-          loading: "Equipment Deleting...",
-          success: <b>Equipment Deleted!</b>,
-          error: (err) => <b>{err.message || "Could not delete!"}</b>,
-        };
+      toast
+        .promise(
+          fetch(`http://localhost:5000/products/${_id}`, {
+            method: "DELETE",
+          }),
+          {
+            loading: "Equipment Deleting...",
+            success: <b>Equipment Deleted!</b>,
+            error: (err) => <b>{err.message || "Could not delete!"}</b>,
+          }
+        )
+        .then((res) => {
+          setProducts(products.filter((p) => p._id !== id));
+        });
     }
   };
   return (
     <Card className="flex flex-col">
       <CardHeader className="grow">
         <img
-          className="h-52 rounded-md object-cover w-full"
+          className="h-52 mb-3 rounded-md object-cover w-full"
           src={image}
           alt=""
         />
@@ -42,17 +54,28 @@ export default function MyProductCard({ product }) {
       <CardContent>
         <div className="flex items-center">
           <p className="border-r border-border pr-3">
-            Category : {categoryName}
+            Category :{" "}
+            <span className="text-muted-foreground/90">{categoryName}</span>
           </p>
 
-          <p className="ml-3 bg-green-100 text-sm text-green-600 px-3">
-            In Stock
-          </p>
+          {stockStatus.availability === "instock" ? (
+            <p className="ml-3 bg-green-100 text-sm text-green-600 px-3">
+              In Stock
+            </p>
+          ) : (
+            <p className="ml-3 bg-red-100 text-sm text-red-600 px-3">
+              Out of Stock
+            </p>
+          )}
         </div>
         <div className="flex items-center mt-4">
-          <p className="border-r border-border pr-3">Price : {price}$</p>
+          <p className="border-r border-border pr-3">
+            Price : <span className="text-muted-foreground/90">{price}$</span>
+          </p>
 
-          <p className="pl-3">Rating : {rating}</p>
+          <p className="pl-3">
+            Rating : <span className="text-muted-foreground/90">{rating}</span>
+          </p>
         </div>
       </CardContent>
       <CardFooter className="flex items-center gap-4">
@@ -63,9 +86,9 @@ export default function MyProductCard({ product }) {
         </Link>
 
         <Button
-          onClick={handleDelete}
+          onClick={() => handleDelete(_id)}
           size="lg"
-          className="bg-red-100 text-red-700"
+          className="border border-red-600 bg-transparent hover:bg-red-300 text-red-700"
         >
           Delete
         </Button>

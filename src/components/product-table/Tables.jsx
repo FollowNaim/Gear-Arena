@@ -24,7 +24,7 @@ export default function Tables({ products }) {
             <TableHead className="text-right">Rating</TableHead>
             <TableHead className="text-right">Price</TableHead>
             <TableHead className="text-right">Stock Status</TableHead>
-            <TableHead className="text-right">Availability</TableHead>
+            <TableHead className="text-right">Quantity</TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>

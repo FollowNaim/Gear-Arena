@@ -117,3 +117,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-button-next::after,
+.swiper-button-prev::after,
+.swiper-pagination {
+  display: none;
+}
+
+#navlinks a.active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
