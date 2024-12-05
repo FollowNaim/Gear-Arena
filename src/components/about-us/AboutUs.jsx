@@ -8,7 +8,7 @@ import { Slide } from "react-awesome-reveal";
 
 function AboutUs() {
   return (
-    <div className="bg-muted my-10">
+    <div className="bg-muted dark:bg-[#141414] my-10">
       <div className="container px-4 py-10">
         <div className="flex justify-center flex-col items-center text-center">
           <Slide>

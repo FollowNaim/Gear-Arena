@@ -20,7 +20,7 @@ function ProductDetails() {
   } = useLoaderData();
   return (
     <div>
-      <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted my-10">
+      <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted dark:bg-[#141414] my-10">
         <div className="h-full w-full">
           <img className="w-full h-full" src={image} alt="" />
         </div>

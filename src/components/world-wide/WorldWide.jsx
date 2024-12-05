@@ -16,7 +16,7 @@ function WorldWide() {
           <SmallCards head={"200+"} text={"Regular Seller"} />
         </div>
       </div>
-      <div className="grid md:grid-cols-12 items-center mt-8">
+      <div className="grid md:grid-cols-12 items-center mt-14">
         <div className="col-span-5 pr-6">
           <p>
             {" "}
@@ -27,11 +27,11 @@ function WorldWide() {
             exceptional performance to athletes in every corner of the planet,
             empowering their journey to greatness.
           </p>
-          <p className="mt-6 mb-2">
+          <p className="mt-8 mb-2">
             Gear Up,{" "}
             <span className="text-destructive">No Matter Where You Are –</span>{" "}
           </p>
-          <Button>Explore Our Collection Now!</Button>
+          <Button className="mt-4">Explore Our Collection Now!</Button>
         </div>
         <div className="col-span-7 order-first md:order-none">
           <img className="ml-auto" src={map} alt="" />
