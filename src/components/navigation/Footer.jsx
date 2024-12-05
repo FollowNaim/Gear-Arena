@@ -5,7 +5,14 @@ import footer4 from "@/assets/footer4.jpg";
 import footer5 from "@/assets/footer5.jpg";
 import footer6 from "@/assets/footer6.jpg";
 import payPhoto from "@/assets/payment.png";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa6";
 import { MdOutlineDateRange } from "react-icons/md";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="border-t border-dashed border-black/30">
@@ -33,35 +40,84 @@ function Footer() {
           <img className="mt-4" src={payPhoto} alt="" />
         </div>
         <div className="col-span-2">
-          <h4>Links</h4>
+          <h4>Quick Links</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
-              <li>Home</li>
-              <li>About us</li>
-              <li>Services</li>
-              <li>Contact Us</li>
+              <Link to={"/"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Home
+                </li>
+              </Link>
+
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Shop
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  About Us
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Contact Us
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
         <div className="col-span-2">
-          <h4>Links</h4>
+          <h4>Customer Support</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
-              <li>Home</li>
-              <li>About us</li>
-              <li>Services</li>
-              <li>Contact Us</li>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  FAQ
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Shipping & Delivery
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Track Your Order
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Returns & Refunds
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
         <div className="col-span-2">
-          <h4>Links</h4>
+          <h4>Legal</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
-              <li>Home</li>
-              <li>About us</li>
-              <li>Services</li>
-              <li>Contact Us</li>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Privacy Policy
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Terms & Conditions
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Refund Policy
+                </li>
+              </Link>
+              <Link to={"/auth/signin"}>
+                <li className="hover:text-primary cursor-pointer hover:underline w-fit">
+                  Cookies Policy
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -80,7 +136,23 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-4 text-center">
-        Gear Arena © 2024 Developed by Naim
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <p>Gear Arena © 2024 Developed by Naim</p>
+          <div className="flex items-center gap-4">
+            <a href="https://facebook.com">
+              <FaFacebook className="hover:text-black" size={22} color="blue" />
+            </a>
+            <a href="https://facebook.com">
+              <FaInstagram className="hover:text-black" size={22} color="red" />
+            </a>
+            <a href="https://facebook.com">
+              <FaYoutube className="hover:text-black" size={22} color="red" />
+            </a>
+            <a href="https://facebook.com">
+              <FaLinkedin className="hover:text-black" size={22} color="blue" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

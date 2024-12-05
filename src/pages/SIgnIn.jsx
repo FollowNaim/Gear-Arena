@@ -17,12 +17,23 @@ import { FaGithub, FaGoogle } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function SignIn() {
-  const { handleGoogleLogin, handleSingIn } = useContext(AuthContext);
+  const { handleGoogleLogin, handleGithubLogin, handleSingIn } =
+    useContext(AuthContext);
   const { state } = useLocation();
   const navigate = useNavigate();
   const handleGoogle = () => {
     toast
       .promise(handleGoogleLogin(), {
+        loading: "Signin in...",
+        success: <b>Signed In Successfull!</b>,
+        error: (err) => <b>{err.message || "Could not sign in!"}</b>,
+      })
+      .then((res) => navigate(state ? state : "/"))
+      .catch((err) => console.log(err.message));
+  };
+  const handleGithub = () => {
+    toast
+      .promise(handleGithubLogin(), {
         loading: "Signin in...",
         success: <b>Signed In Successfull!</b>,
         error: (err) => <b>{err.message || "Could not sign in!"}</b>,
@@ -92,7 +103,11 @@ export default function SignIn() {
                 >
                   <FaGoogle /> Google
                 </Button>
-                <Button variant="outline" className="w-full">
+                <Button
+                  onClick={handleGithub}
+                  variant="outline"
+                  className="w-full"
+                >
                   <FaGithub /> Github
                 </Button>
               </div>

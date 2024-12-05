@@ -1,6 +1,7 @@
 import RootLayout from "@/layouts/RootLayout";
 import AddEquipment from "@/pages/AddEquipment";
 import AllSports from "@/pages/AllSports";
+import Error404 from "@/pages/Error404";
 import Home from "@/pages/Home";
 import MyEquipment from "@/pages/MyEquipment";
 import ProductDetails from "@/pages/ProductDetails";
@@ -14,6 +15,7 @@ export const routes = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <Error404 />,
     children: [
       {
         path: "/",
