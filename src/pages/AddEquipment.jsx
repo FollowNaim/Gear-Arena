@@ -92,6 +92,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="category">Category Name</Label>
                 <Input
+                  required
                   name="category"
                   id="category"
                   type="text"
@@ -103,6 +104,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="image">Image</Label>
                 <Input
+                  required
                   name="image"
                   id="image"
                   type="url"
@@ -112,6 +114,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="description">Description</Label>
                 <Input
+                  required
                   name="description"
                   id="description"
                   type="text"
@@ -123,6 +126,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="price">Price (in dollar)</Label>
                 <Input
+                  required
                   name="price"
                   step="0.01"
                   id="price"
@@ -133,6 +137,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="rating">Rating</Label>
                 <Input
+                  required
                   step="0.01"
                   name="rating"
                   id="rating"
@@ -145,6 +150,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="customization">Customization</Label>
                 <Input
+                  required
                   name="customization"
                   id="customization"
                   type="text"
@@ -154,6 +160,7 @@ export default function AddEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="processing">Processing Time (in day)</Label>
                 <Input
+                  required
                   name="processing"
                   id="processing"
                   type="number"
@@ -182,6 +189,7 @@ export default function AddEquipment() {
                 <Label htmlFor="available">Available Quantity</Label>
 
                 <Input
+                  required
                   name="available"
                   id="available"
                   type="number"

@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button";
 import signupAnimation from "@/assets/animation/register.json";
+import Validation from "@/components/pass-validation/Validation";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -13,12 +14,13 @@ import { auth } from "@/firebase/firebase.config";
 import { AuthContext } from "@/provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Lottie from "lottie-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const { handleSignUp } = useContext(AuthContext);
+  const [isDisable, setIsDisable] = useState(true);
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,6 +76,7 @@ export default function SignUp() {
             <div className="grid gap-2">
               <Label htmlFor="name">Name</Label>
               <Input
+                required
                 name="name"
                 id="name"
                 placeholder="Enter the user's name"
@@ -82,6 +85,7 @@ export default function SignUp() {
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
               <Input
+                required
                 name="email"
                 id="email"
                 type="email"
@@ -91,6 +95,7 @@ export default function SignUp() {
             <div className="grid gap-2">
               <Label htmlFor="photo">Photo URL</Label>
               <Input
+                required
                 name="photo"
                 id="photo"
                 type="url"
@@ -98,15 +103,18 @@ export default function SignUp() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="password">Password</Label>
+              {/* <Label htmlFor="password">Password</Label>
               <Input
                 name="password"
                 id="password"
                 type="password"
                 placeholder="Enter a password"
-              />
+              /> */}
+              <Validation setIsDisable={setIsDisable} />
             </div>
-            <Button className="w-full pt-2">Sign Up</Button>
+            <Button disabled={isDisable} className="w-full pt-2">
+              Sign Up
+            </Button>
             <div className="mt-4 text-center text-sm">
               Alreadt have an account?{" "}
               <Link to="/auth/signin" className="underline">

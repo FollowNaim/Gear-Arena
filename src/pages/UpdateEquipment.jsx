@@ -96,6 +96,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="name">Item Name</Label>
                 <Input
+                  required
                   name="name"
                   id="name"
                   defaultValue={itemName}
@@ -105,6 +106,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="category">Category Name</Label>
                 <Input
+                  required
                   defaultValue={categoryName}
                   name="category"
                   id="category"
@@ -117,6 +119,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="image">Image</Label>
                 <Input
+                  required
                   name="image"
                   defaultValue={image}
                   id="image"
@@ -127,6 +130,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="description">Description</Label>
                 <Input
+                  required
                   name="description"
                   id="description"
                   defaultValue={description}
@@ -139,6 +143,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="price">Price (in dollar)</Label>
                 <Input
+                  required
                   name="price"
                   step="0.01"
                   defaultValue={price}
@@ -150,6 +155,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="rating">Rating</Label>
                 <Input
+                  required
                   step="0.01"
                   name="rating"
                   defaultValue={rating}
@@ -163,6 +169,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="customization">Customization</Label>
                 <Input
+                  required
                   name="customization"
                   defaultValue={customization}
                   id="customization"
@@ -173,6 +180,7 @@ export default function UpdateEquipment() {
               <div className="grid gap-2 w-full">
                 <Label htmlFor="processing">Processing Time (in day)</Label>
                 <Input
+                  required
                   name="processing"
                   defaultValue={processingTime}
                   id="processing"
@@ -203,6 +211,7 @@ export default function UpdateEquipment() {
                 <Label htmlFor="available">Available Quantity</Label>
 
                 <Input
+                  required
                   name="available"
                   id="available"
                   defaultValue={stockStatus.quantity}
