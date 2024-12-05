@@ -1,5 +1,5 @@
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -22,23 +22,30 @@ export default function MyProductCard({ product, setProducts, products }) {
     stockStatus,
   } = product;
   const handleDelete = (id) => {
-    const check = confirm("are your sure? you want to delete?");
-    if (check) {
-      toast
-        .promise(
-          fetch(`http://localhost:5000/products/${_id}`, {
-            method: "DELETE",
-          }),
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/products/${_id}`, {
+          method: "DELETE",
+        }).then((res) => {
           {
-            loading: "Equipment Deleting...",
-            success: <b>Equipment Deleted!</b>,
-            error: (err) => <b>{err.message || "Could not delete!"}</b>,
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+            setProducts(products.filter((p) => p._id !== id));
           }
-        )
-        .then((res) => {
-          setProducts(products.filter((p) => p._id !== id));
         });
-    }
+      }
+    });
   };
   return (
     <Card className="flex flex-col">

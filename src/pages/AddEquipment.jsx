@@ -1,3 +1,4 @@
+import fillAnimation from "@/assets/animation/fill.json";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { AuthContext } from "@/provider/AuthProvider";
+import Lottie from "lottie-react";
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -34,8 +36,8 @@ export default function AddEquipment() {
     const description = form.description.value;
     const price = parseFloat(form.price.value);
     const rating = form.rating.value;
-    const customization = form.rating.value;
-    const processing = form.rating.value;
+    const customization = form.customization.value;
+    const processing = form.processing.value;
     const available = form.available.value;
     const product = {
       itemName: name,
@@ -45,7 +47,6 @@ export default function AddEquipment() {
       price,
       rating,
       customization,
-
       processingTime: processing,
       stockStatus: { availability: inStock, quantity: available },
       userEmail: user.email,
@@ -69,8 +70,8 @@ export default function AddEquipment() {
       .then((res) => navigate("/all-sports"));
   };
   return (
-    <div className="flex items-center justify-center mt-10 mb-14 px-4 md:px-6">
-      <form className="w-full " onSubmit={handleSubmit}>
+    <div className="grid grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
+      <form className="w-full max-w-md mx-auto" onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl">Add Equipment</CardTitle>
@@ -194,6 +195,15 @@ export default function AddEquipment() {
           </CardFooter>
         </Card>
       </form>
+      <div className="w-[300px] h-[300px] mx-auto col-span-1">
+        <Lottie
+          width={300}
+          height={300}
+          animationData={fillAnimation}
+          autoplay={true}
+          loop={true}
+        />
+      </div>
     </div>
   );
 }

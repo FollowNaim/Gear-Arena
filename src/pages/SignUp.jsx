@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import signupAnimation from "@/assets/animation/register.json";
 import {
   Card,
   CardContent,
@@ -11,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { auth } from "@/firebase/firebase.config";
 import { AuthContext } from "@/provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Lottie from "lottie-react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
@@ -56,8 +58,11 @@ export default function SignUp() {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="flex items-center justify-center mt-10 px-4 md:px-6">
-      <form className="w-full" onSubmit={handleSubmit}>
+    <div className="grid grid-cols-2 justify-center items-center max-w-7xl mx-auto my-10">
+      <form
+        className="w-full max-w-sm mx-auto col-span-1"
+        onSubmit={handleSubmit}
+      >
         <Card className="w-full max-w-md mx-auto">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl">Sign up your account</CardTitle>
@@ -104,13 +109,24 @@ export default function SignUp() {
             <Button className="w-full pt-2">Sign Up</Button>
             <div className="mt-4 text-center text-sm">
               Alreadt have an account?{" "}
-              <Link href="#" className="underline">
+              <Link to="/auth/signin" className="underline">
                 Sign In
               </Link>
             </div>
           </CardContent>
         </Card>
       </form>
+      <div className="col-span-1">
+        <div className="w-[300px] h-[300px] mx-auto col-span-1">
+          <Lottie
+            width={300}
+            height={300}
+            animationData={signupAnimation}
+            autoplay={true}
+            loop={true}
+          />
+        </div>
+      </div>
     </div>
   );
 }

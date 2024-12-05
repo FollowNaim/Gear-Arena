@@ -86,7 +86,9 @@ export default function Tables({ products, setProducts }) {
                 <TableCell className="text-right">{rating}</TableCell>
                 <TableCell className="text-right">${price}</TableCell>
                 <TableCell className="text-right">
-                  {stockStatus.availability}
+                  {stockStatus.availability === "instock"
+                    ? "In Stock"
+                    : "Out of Stock"}
                 </TableCell>
                 <TableCell className="text-right">
                   {stockStatus.quantity}
