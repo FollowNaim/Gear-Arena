@@ -60,12 +60,9 @@ export default function SignUp() {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="grid grid-cols-2 justify-center items-center max-w-7xl mx-auto my-10">
-      <form
-        className="w-full max-w-sm mx-auto col-span-1"
-        onSubmit={handleSubmit}
-      >
-        <Card className="w-full max-w-md mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full max-w-7xl mx-auto my-10 px-4">
+      <form className="col-span-1" onSubmit={handleSubmit}>
+        <Card className="md:max-w-sm w-full  mx-auto ">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl">Sign up your account</CardTitle>
             <CardDescription>
@@ -124,8 +121,8 @@ export default function SignUp() {
           </CardContent>
         </Card>
       </form>
-      <div className="col-span-1">
-        <div className="w-[300px] h-[300px] mx-auto col-span-1">
+      <div className="col-span-1 hidden md:block">
+        <div className="w-[300px] h-[300px] mx-auto col-span-1 ">
           <Lottie
             width={300}
             height={300}

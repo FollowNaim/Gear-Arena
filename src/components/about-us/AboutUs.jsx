@@ -4,19 +4,22 @@ import img4 from "@/assets/about-us/team-success.png";
 import img2 from "@/assets/about-us/tennis.png";
 import { AnimatedTooltipPreview } from "@/components/about-us/Tooltip";
 import ValuesCard from "@/components/about-us/ValuesCard";
+import { Slide } from "react-awesome-reveal";
 
 function AboutUs() {
   return (
     <div className="bg-muted my-10">
       <div className="container px-4 py-10">
         <div className="flex justify-center flex-col items-center text-center">
-          <h3 className="text-3xl font-bold">
-            <span className="text-2xl"> Our Core Values : </span>
-            <p className="mt-2">
-              Built for <span className="text-destructive">Champions,</span> By
-              Champions
-            </p>
-          </h3>
+          <Slide>
+            <h3 className="text-3xl font-bold">
+              <span className="text-2xl"> Our Core Values : </span>
+              <p className="mt-2">
+                Built for <span className="text-destructive">Champions,</span>{" "}
+                By Champions
+              </p>
+            </h3>
+          </Slide>
           <p className="mt-3 text-primary/80">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
             error?
@@ -28,7 +31,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-4 mt-10 relative before:absolute overflow-hidden before:w-1/2 before:h-full before:rotate-45 before:bg-destructive/30 before:left-1/2 before:-translate-x-1/2 before:blur-xl before:opacity-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 relative before:absolute overflow-hidden before:w-1/2 before:h-full before:rotate-45 before:bg-destructive/30 before:left-1/2 before:-translate-x-1/2 before:blur-xl before:opacity-10">
           <ValuesCard
             bold={"Unbeatable"}
             text={"Quality"}

@@ -12,7 +12,7 @@ function Products({ products }) {
           carefully curated selection of sports essentials.
         </p>
       </div>
-      <div className="grid container grid-cols-3 gap-4 mt-8 px-4">
+      <div className="grid container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 px-4">
         {products.map((product) => (
           <Product product={product} key={product._id} />
         ))}

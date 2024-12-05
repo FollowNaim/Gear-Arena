@@ -55,9 +55,9 @@ export default function SignIn() {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="grid grid-cols-2 justify-center max-w-7xl mx-auto px-4 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto px-4 items-center">
       <Card
-        className="max-w-sm w-full
+        className="md:max-w-sm w-full
        mx-auto my-10 col-span-1"
       >
         <CardHeader>
@@ -121,7 +121,7 @@ export default function SignIn() {
           </CardContent>
         </form>
       </Card>
-      <div className="w-[300px] h-[300px] mx-auto col-span-1">
+      <div className="w-[300px] h-[300px] mx-auto col-span-1 hidden md:block">
         <Lottie
           width={300}
           height={300}

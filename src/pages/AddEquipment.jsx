@@ -70,7 +70,7 @@ export default function AddEquipment() {
       .then((res) => navigate("/all-sports"));
   };
   return (
-    <div className="grid grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
       <form className="w-full max-w-md mx-auto" onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">
@@ -203,7 +203,7 @@ export default function AddEquipment() {
           </CardFooter>
         </Card>
       </form>
-      <div className="w-[300px] h-[300px] mx-auto col-span-1">
+      <div className="w-[300px] h-[300px] mx-auto col-span-1 hidden md:block">
         <Lottie
           width={300}
           height={300}

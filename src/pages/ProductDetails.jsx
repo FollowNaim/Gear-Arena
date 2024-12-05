@@ -20,12 +20,9 @@ function ProductDetails() {
   } = useLoaderData();
   return (
     <div>
-      <div className="container pr-4 grid grid-cols-2 justify-center items-center gap-4 bg-muted my-10">
-        <div
-          className={`h-full w-ful bg-cover bg-no-repeat`}
-          style={{ backgroundImage: `url('${image}')` }}
-        >
-          {/* <img src={photo} alt="" /> */}
+      <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted my-10">
+        <div className="h-full w-full">
+          <img className="w-full h-full" src={image} alt="" />
         </div>
         <div className="max-w-sm ml-10 py-10">
           <h3 className="text-4xl font-bold">{itemName}</h3>

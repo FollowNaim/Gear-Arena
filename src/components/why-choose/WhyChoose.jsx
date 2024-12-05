@@ -1,13 +1,12 @@
 import aboutus from "@/assets/about-us.png";
-import { Car } from "lucide-react";
-import { Button } from "../ui/button";
-import one from "@/assets/why-choose/one.png";
-import two from "@/assets/why-choose/two.png";
-import three from "@/assets/why-choose/three.png";
-import four from "@/assets/why-choose/four.png";
 import five from "@/assets/why-choose/five.png";
-import six from "@/assets/why-choose/six.png";
+import four from "@/assets/why-choose/four.png";
+import one from "@/assets/why-choose/one.png";
 import peep from "@/assets/why-choose/peep1.png";
+import six from "@/assets/why-choose/six.png";
+import three from "@/assets/why-choose/three.png";
+import two from "@/assets/why-choose/two.png";
+import { Button } from "../ui/button";
 function WhyChoose() {
   return (
     <div className="py-10">
@@ -15,7 +14,7 @@ function WhyChoose() {
         className="container bg-contain bg-right-top px-4 py-10"
         style={{ backgroundImage: `url('${aboutus}')` }}
       >
-        <div className=" flex justify-between items-center px-4">
+        <div className=" flex justify-between flex-col-reverse md:flex-row items-center px-4">
           <div className="max-w-md">
             <h3 className="text-3xl font-bold">
               Why <span className="text-destructive">Choose Us ?</span>
@@ -28,11 +27,11 @@ function WhyChoose() {
             </p>
           </div>
           <div>
-            <img className="w-40" src={peep} alt="" />
+            <img className="w-40 mb-8 md:mb-0" src={peep} alt="" />
           </div>
         </div>
-        <div className="grid grid-cols-3 mt-14">
-          <div className="flex pb-8 flex-col border-r border-black border-b p-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-14">
+          <div className="flex pb-8 flex-col md:border-r border-black border-b p-4">
             <img className="w-8 mb-2" src={one} alt="" />{" "}
             <h3 className="mt-4 text-2xl font-semibold">
               Superior <span className="text-destructive">Quality</span>{" "}
@@ -44,7 +43,7 @@ function WhyChoose() {
               long-lasting products that enhance your performance in every game.
             </p>
           </div>
-          <div className="flex flex-col border-r border-black border-b p-4">
+          <div className="flex flex-col md:border-r border-black border-b p-4">
             <img className="w-8 mb-2" src={two} alt="" />
             <h3 className="mt-4 text-2xl font-semibold">
               <span className="text-destructive">Wide Range</span> of Choices
@@ -66,9 +65,9 @@ function WhyChoose() {
               prices, giving you the best value for your money.
             </p>
           </div>
-          <div className="flex flex-col border-r border-black  p-4">
+          <div className="flex flex-col md:border-r border-b md:border-b-0  border-black  p-4">
             <img className="w-8 mb-2 mt-6" src={four} alt="" />
-            <h3 className="mt-4 text-2xl font-semibold">
+            <h3 className="mt-4 text-2xl  font-semibold">
               <span className="text-destructive">Fast & Reliable</span> Shipping
             </h3>
             <p className="text-muted-foreground/90 mt-2">
@@ -77,7 +76,7 @@ function WhyChoose() {
               game without unnecessary delays.
             </p>
           </div>
-          <div className="flex flex-col border-r border-black  p-4">
+          <div className="flex flex-col md:border-r border-b md:border-b-0  border-black  p-4">
             <img className="w-8 mb-2 mt-6" src={five} alt="" />
             <h3 className="mt-4 text-2xl font-semibold">
               <span className="text-destructive">Trusted</span> by Athletes
@@ -88,7 +87,7 @@ function WhyChoose() {
               us a preferred partner for athletes worldwide.
             </p>
           </div>
-          <div className="flex flex-col  p-4">
+          <div className="flex flex-col  p-4 ">
             <img className="w-8 mb-2 mt-6" src={six} alt="" />
             <h3 className="mt-4 text-2xl font-semibold">
               <span className="text-destructive">Exceptional</span> Customer
