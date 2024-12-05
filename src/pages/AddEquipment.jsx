@@ -32,7 +32,7 @@ export default function AddEquipment() {
     const category = form.category.value;
     const image = form.image.value;
     const description = form.description.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const customization = form.rating.value;
     const processing = form.rating.value;
@@ -69,7 +69,7 @@ export default function AddEquipment() {
       .then((res) => navigate("/all-sports"));
   };
   return (
-    <div className="flex items-center justify-center mt-10 px-4 md:px-6">
+    <div className="flex items-center justify-center mt-10 mb-14 px-4 md:px-6">
       <form className="w-full " onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">

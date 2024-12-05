@@ -7,23 +7,29 @@ import three from "@/assets/why-choose/three.png";
 import four from "@/assets/why-choose/four.png";
 import five from "@/assets/why-choose/five.png";
 import six from "@/assets/why-choose/six.png";
+import peep from "@/assets/why-choose/peep1.png";
 function WhyChoose() {
   return (
     <div className="py-10">
       <div
-        className="conatiner bg-contain bg-right-top px-4 py-10"
+        className="container bg-contain bg-right-top px-4 py-10"
         style={{ backgroundImage: `url('${aboutus}')` }}
       >
-        <div className="max-w-md px-4">
-          <h3 className="text-3xl font-bold">
-            Why <span className="text-destructive">Choose Us ?</span>
-          </h3>
-          <p className="text-muted-foreground/90 mt-6">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate
-            ea sed ex sit commodi ut itaque! Animi aperiam vero molestiae
-            dolorem, numquam, temporibus rerum esse labore minus ullam natus
-            eveniet.
-          </p>
+        <div className=" flex justify-between items-center px-4">
+          <div className="max-w-md">
+            <h3 className="text-3xl font-bold">
+              Why <span className="text-destructive">Choose Us ?</span>
+            </h3>
+            <p className="text-muted-foreground/90 mt-6">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Voluptate ea sed ex sit commodi ut itaque! Animi aperiam vero
+              molestiae dolorem, numquam, temporibus rerum esse labore minus
+              ullam natus eveniet.
+            </p>
+          </div>
+          <div>
+            <img className="w-40" src={peep} alt="" />
+          </div>
         </div>
         <div className="grid grid-cols-3 mt-14">
           <div className="flex pb-8 flex-col border-r border-black border-b p-4">

@@ -6,7 +6,7 @@ import { useLoaderData } from "react-router-dom";
 function Home() {
   const products = useLoaderData();
   return (
-    <div className="mb-20">
+    <div className="mb-16 mt-10">
       {/* <Hero /> */}
       <Sliders />
       <Products products={products} />

@@ -11,7 +11,7 @@ function RootLayout() {
       <nav>
         <Nav />
       </nav>
-      <div className="my-10">
+      <div className="">
         <Outlet />
       </div>
       <footer>

@@ -22,7 +22,7 @@ function MyEquipment() {
   }, []);
 
   return (
-    <div>
+    <div className="my-10">
       <div className="container px-4">
         <div className="grid grid-cols-3 gap-4">
           {!products.length

@@ -1,19 +1,54 @@
 import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Table,
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "../ui/button";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
 
-export default function Tables({ products }) {
+export default function Tables({ products, setProducts }) {
+  const [selectVal, setSelectVal] = useState("");
+  useEffect(() => {
+    fetch(`http://localhost:5000/products-sorted?sort=${selectVal}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        console.log(data);
+      });
+  }, [selectVal]);
   return (
-    <div className="container px-4">
+    <div className="container px-4 mt-4 mb-10">
+      <div className="w-[180px] ml-auto pb-1">
+        <Select onValueChange={(v) => setSelectVal(v)}>
+          <SelectTrigger>
+            <SelectValue
+              className="w-[180px]"
+              placeholder="Select a sort method"
+            ></SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Sorting</SelectLabel>
+              <SelectItem value="ascending">Ascending</SelectItem>
+              <SelectItem value="descending">Descending</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
       <Table>
         <TableCaption>A list of all products.</TableCaption>
         <TableHeader>

@@ -1,4 +1,5 @@
 import check from "@/assets/check.png";
+import remove from "@/assets/remove.png";
 import { useLoaderData } from "react-router-dom";
 function ProductDetails() {
   const {
@@ -15,7 +16,7 @@ function ProductDetails() {
   } = useLoaderData();
   return (
     <div>
-      <div className="container pr-4 grid grid-cols-2 justify-center items-center gap-4 bg-muted">
+      <div className="container pr-4 grid grid-cols-2 justify-center items-center gap-4 bg-muted my-10">
         <div
           className={`h-full w-ful bg-cover bg-no-repeat`}
           style={{ backgroundImage: `url('${image}')` }}
@@ -52,7 +53,17 @@ function ProductDetails() {
           </div>
           <div className="mt-6 flex items-center gap-8">
             <p className=" w-fit rounded-3xl flex items-center gap-2">
-              <img className="w-6" src={check} alt="" /> In Stock
+              {stockStatus.availability === "instock" ? (
+                <>
+                  {" "}
+                  <img className="w-6" src={check} alt="" /> In Stock
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <img className="w-6" src={remove} alt="" /> Out of Stock
+                </>
+              )}
             </p>
             <p>
               <h4>

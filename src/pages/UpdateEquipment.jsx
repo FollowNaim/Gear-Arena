@@ -46,7 +46,8 @@ export default function UpdateEquipment() {
     const category = form.category.value;
     const image = form.image.value;
     const description = form.description.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
+    console.log(price);
     const rating = form.rating.value;
     const customization = form.customization.value;
     const processing = form.processing.value;
@@ -62,6 +63,7 @@ export default function UpdateEquipment() {
       processingTime: processing,
       stockStatus: { availability: inStock, quantity: available },
     };
+
     toast
       .promise(
         fetch(`http://localhost:5000/products/${_id}`, {
@@ -80,7 +82,7 @@ export default function UpdateEquipment() {
       .then((res) => navigate("/all-sports"));
   };
   return (
-    <div className="flex items-center justify-center mt-10 px-4 md:px-6">
+    <div className="flex items-center justify-center mt-10 mb-14 px-4 md:px-6">
       <form className="w-full " onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">
