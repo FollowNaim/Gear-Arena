@@ -1,7 +1,7 @@
 import map from "@/assets/about-us/map.jpeg";
+import SectionTitle from "../animation/SectionTitle";
 import { Button } from "../ui/button";
 import SmallCards from "./SmallCards";
-import SectionTitle from "../animation/SectionTitle";
 function WorldWide() {
   return (
     <div className="px-4 container">
