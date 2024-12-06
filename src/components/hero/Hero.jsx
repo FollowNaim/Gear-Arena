@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 function Hero() {
   return (
     <div className=" px-4">
-      <div className="container grid grid-cols-2 justify-between items-center bg-slate-950 text-white rounded-xl">
+      <div className="container border grid grid-cols-2 justify-between items-center bg-slate-950 text-white rounded-xl">
         <div className="py-20 pl-10">
           <h4 className="font-semibold text-6xl leading-tight ">
             Never Low Your <br /> Standard
