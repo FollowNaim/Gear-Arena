@@ -52,7 +52,6 @@ export default function SignIn() {
         success: <b>Signed In Successfull!</b>,
         error: (err) => <b>{err.message || "Could not sign in!"}</b>,
       })
-      .then((res) => console.log(res.user))
       .catch((err) => console.log(err.message));
   };
   return (

@@ -25,14 +25,12 @@ function MyEquipment() {
       .then((data) => {
         setProducts(data);
         setLoading(false);
-        console.log(data);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
   }, []);
-  console.log(products);
+
   if (loading) return <Spinner />;
 
   return (
@@ -69,19 +67,17 @@ function MyEquipment() {
             </div>
           </div>
         ) : (
-          products.map((product) => (
-            <div
-              key={product._id}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {products.map((product) => (
               <MyProductCard
+                key={product._id}
                 roductCard
                 product={product}
                 setProducts={setProducts}
                 products={products}
               />
-            </div>
-          ))
+            ))}
+          </div>
         )}
       </div>
     </div>

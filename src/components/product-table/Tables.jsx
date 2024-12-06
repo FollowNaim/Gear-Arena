@@ -29,7 +29,6 @@ export default function Tables({ products, setProducts }) {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-        console.log(data);
       });
   }, [selectVal]);
   return (

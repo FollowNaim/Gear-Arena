@@ -138,7 +138,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-4 text-center">
-        <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row gap-5 md:gap-0 justify-between items-center">
           <p>Gear Arena © 2024 Developed by Naim</p>
           <div className="flex items-center gap-4">
             <a href="https://facebook.com">

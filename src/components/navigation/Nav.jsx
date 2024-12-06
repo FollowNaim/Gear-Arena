@@ -6,6 +6,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 import { IconButton } from "../icon-btn/IconBtn";
 import { Button } from "../ui/button";
 
@@ -45,13 +46,13 @@ function Nav() {
             <NavLink to={"/"}>
               <li>Home</li>
             </NavLink>
-            <NavLink to={"/all-sports"}>
+            <NavLink to={"/all-equipments"}>
               <li>All Equipment</li>
             </NavLink>
             <NavLink to={"/add-equipment"}>
               <li>Add Equiement</li>
             </NavLink>
-            <NavLink to={"/my-equipment"}>
+            <NavLink to={"/my-equipments"}>
               <li>My Equipement</li>
             </NavLink>
             <Button className="block md:hidden" onClick={handleLogout}>
@@ -84,9 +85,13 @@ function Nav() {
               </Link>
             </div>
           )}
+          <Tooltip id="name-tooltip" />
           {user && (
             <div className="flex gap-4 items-center">
-              <p title={user.displayName || "N/A"}>
+              <p
+                data-tooltip-id="name-tooltip"
+                data-tooltip-content={user.displayName || "N/A"}
+              >
                 <img
                   className="w-10 h-10 object-cover rounded-full"
                   referrerPolicy="no-referrer"

@@ -62,7 +62,7 @@ export default function UpdateEquipment() {
     const image = form.image.value;
     const description = form.description.value;
     const price = parseFloat(form.price.value);
-    console.log(price);
+
     const rating = form.rating.value;
     const customization = form.customization.value;
     const processing = form.processing.value;
@@ -94,7 +94,7 @@ export default function UpdateEquipment() {
           error: (err) => <b>{err.message || "Could not update!"}</b>,
         }
       )
-      .then((res) => navigate("/all-sports"));
+      .then((res) => navigate("/all-equipments"));
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
@@ -108,6 +108,16 @@ export default function UpdateEquipment() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="grid gap-2 w-full">
+                <Label>User Name</Label>
+                <Input disabled value={user?.displayName} />
+              </div>
+              <div className="grid gap-2 w-full">
+                <Label>User Email</Label>
+                <Input disabled value={user?.email} />
+              </div>
+            </div>
             <div className="flex items-center gap-3">
               <div className="grid gap-2 w-full">
                 <Label htmlFor="name">Item Name</Label>

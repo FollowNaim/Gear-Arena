@@ -4,7 +4,7 @@ import SmallCards from "./SmallCards";
 import SectionTitle from "../animation/SectionTitle";
 function WorldWide() {
   return (
-    <div className="px-4">
+    <div className="px-4 container">
       <div>
         <h3 className="text-3xl font-bold">
           <SectionTitle>

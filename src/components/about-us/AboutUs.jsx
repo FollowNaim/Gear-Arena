@@ -22,10 +22,15 @@ function AboutUs() {
             </SectionTitle>
           </h3>
 
-          <p className="mt-3 text-primary/80 text-center">
+          <p className="mt-3 hidden md:block text-primary/80 text-center w-full px-4 md:px-0">
             <Fade cascade damping={1e-1} duration={1000}>
               Empowering athletes worldwide with gear designed by those who
               understand the spirit of competition firsthand.
+            </Fade>
+          </p>
+          <p className="mt-3 block md:hidden text-primary/80 text-center w-full px-4 md:px-0 ">
+            <Fade className="w-10" cascade damping={1e-1} duration={1000}>
+              Empowering athletes with gear crafted by champions
             </Fade>
           </p>
           <div className="flex flex-col md:flex-row items-center gap-4 mt-8">

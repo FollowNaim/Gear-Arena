@@ -43,7 +43,6 @@ export default function SignUp() {
           photoURL: photo,
         }).then();
 
-        console.log("s", res);
         navigate("/");
         fetch("https://geararena-server.vercel.app/users", {
           method: "POST",
@@ -55,9 +54,7 @@ export default function SignUp() {
             email: res.user.email,
             photo: res.user.photoURL,
           }),
-        })
-          .then((res) => res.json())
-          .then((data) => console.log(data));
+        }).then((res) => res.json());
       })
       .catch((err) => console.log(err.message));
   };

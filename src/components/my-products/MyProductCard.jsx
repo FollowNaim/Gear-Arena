@@ -38,7 +38,7 @@ export default function MyProductCard({ product, setProducts, products }) {
           {
             Swal.fire({
               title: "Deleted!",
-              text: "Your file has been deleted.",
+              text: "Your Equipmenthas been deleted.",
               icon: "success",
             });
             setProducts(products.filter((p) => p._id !== id));

@@ -19,9 +19,6 @@ function AuthProvider({ children }) {
   const githubProvider = new GithubAuthProvider();
 
   useEffect(() => {
-    console.log(user);
-  }, [user]);
-  useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);

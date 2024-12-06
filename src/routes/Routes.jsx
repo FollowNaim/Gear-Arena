@@ -38,7 +38,7 @@ export const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/all-sports",
+        path: "/all-equipments",
         element: <AllSports />,
       },
       {
@@ -50,7 +50,7 @@ export const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/my-equipment",
+        path: "/my-equipments",
         element: (
           <PrivateRoutes>
             <MyEquipment />

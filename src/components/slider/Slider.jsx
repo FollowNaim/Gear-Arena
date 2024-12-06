@@ -28,7 +28,7 @@ export default function Slider({ heading, bold, description, image }) {
         </div>
         <div className="w-full h-full order-first md:order-none">
           <img
-            className="ml-auto z-50 col-span-1 rounded-t-xl md:rounded-t-none object-cover h-72  md:rounded-r-xl w-full md:h-full bg-cover bg-no-repeat order-first md:order-none"
+            className="ml-auto z-50 col-span-1 rounded-t-xl md:rounded-t-none object-cover h-72  md:!rounded-r-xl w-full md:h-full bg-cover bg-no-repeat order-first md:order-none"
             src={image}
             alt=""
           />
