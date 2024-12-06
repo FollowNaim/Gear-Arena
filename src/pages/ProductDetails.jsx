@@ -15,7 +15,7 @@ function ProductDetails() {
   const params = useParams();
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/products/${params.id}`)
+    fetch(`https://geararena-server.vercel.app/products/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

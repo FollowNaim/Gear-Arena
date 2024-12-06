@@ -14,7 +14,7 @@ function MyEquipment() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/my-equipment", {
+    fetch("https://geararena-server.vercel.app/my-equipment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

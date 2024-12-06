@@ -32,7 +32,7 @@ export default function MyProductCard({ product, setProducts, products }) {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://geararena-server.vercel.app/products/${_id}`, {
           method: "DELETE",
         }).then((res) => {
           {

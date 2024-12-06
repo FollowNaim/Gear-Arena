@@ -12,7 +12,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/limited-products")
+    fetch("https://geararena-server.vercel.app/limited-products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
