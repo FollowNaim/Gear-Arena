@@ -10,6 +10,7 @@ import two from "@/assets/why-choose/two.png";
 import { useContext } from "react";
 import { Button } from "../ui/button";
 import { themeContext } from "@/provider/ThemeProvider";
+import SectionTitle from "../animation/SectionTitle";
 function WhyChoose() {
   const { theme } = useContext(themeContext);
   return (
@@ -21,13 +22,14 @@ function WhyChoose() {
         <div className=" flex justify-between flex-col-reverse md:flex-row items-center px-4">
           <div className="max-w-md">
             <h3 className="text-3xl font-bold text-black">
-              Why <span className="text-destructive">Choose Us ?</span>
+              <SectionTitle>
+                Why <span className="text-destructive">Choose Us ?</span>
+              </SectionTitle>
             </h3>
             <p className="text-muted-foreground/90 dark:text-black/80 mt-6">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptate ea sed ex sit commodi ut itaque! Animi aperiam vero
-              molestiae dolorem, numquam, temporibus rerum esse labore minus
-              ullam natus eveniet.
+              Discover unparalleled dedication to quality and performance. We go
+              beyond expectations to deliver exceptional products and services
+              tailored to elevate your game.
             </p>
           </div>
           <div>

@@ -4,8 +4,8 @@ function Hero() {
   return (
     <div className=" px-4">
       <div className="container border grid grid-cols-2 justify-between items-center bg-slate-950 text-white rounded-xl">
-        <div className="py-20 pl-10">
-          <h4 className="font-semibold text-6xl leading-tight ">
+        <div className="py-20 md:pl-10">
+          <h4 className="font-semibold text-2xl lg:text-6xl leading-tight ">
             Never Low Your <br /> Standard
           </h4>
           <p className="pt-2 text-muted/60">

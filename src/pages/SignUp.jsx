@@ -1,5 +1,6 @@
 import signupAnimation from "@/assets/animation/register.json";
 import Validation from "@/components/pass-validation/Validation";
+import SEO from "@/components/seo/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,6 +22,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function SignUp() {
   const { handleSignUp } = useContext(AuthContext);
   const [isDisable, setIsDisable] = useState(true);
+  const [pass, setPass] = useState("");
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ export default function SignUp() {
     const name = form.name.value;
     const email = form.email.value;
     const photo = form.photo.value;
-    const password = form.password.value;
+    const password = pass;
     toast
       .promise(handleSignUp(email, password), {
         loading: "Signin up...",
@@ -61,6 +63,7 @@ export default function SignUp() {
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full max-w-7xl mx-auto my-10 px-4">
+      <SEO title={"Sign Up | Gear Arena"} />
       <form className="col-span-1" onSubmit={handleSubmit}>
         <Card className="md:max-w-sm w-full  mx-auto ">
           <CardHeader className="space-y-1 text-center">
@@ -92,7 +95,6 @@ export default function SignUp() {
             <div className="grid gap-2">
               <Label htmlFor="photo">Photo URL</Label>
               <Input
-                required
                 name="photo"
                 id="photo"
                 type="url"
@@ -107,7 +109,7 @@ export default function SignUp() {
                 type="password"
                 placeholder="Enter a password"
               /> */}
-              <Validation setIsDisable={setIsDisable} />
+              <Validation setPass={setPass} setIsDisable={setIsDisable} />
             </div>
             <Button disabled={isDisable} className="w-full pt-2">
               Sign Up

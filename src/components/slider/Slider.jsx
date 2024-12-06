@@ -1,4 +1,5 @@
 import bgleft from "@/assets/bg-left.jpg";
+import SectionTitle from "../animation/SectionTitle";
 import { Button } from "../ui/button";
 export default function Slider({ heading, bold, description, image }) {
   return (
@@ -7,12 +8,19 @@ export default function Slider({ heading, bold, description, image }) {
         className="container border grid grid-cols-1 md:grid-cols-2 justify-between items-center bg-black/80 bg-blend-overlay text-white rounded-xl"
         style={{ backgroundImage: `url(${bgleft})` }}
       >
-        <div className="col-span-1 py-20 pl-10">
-          <h4 className="font-semibold text-5xl leading-tight ">
-            {heading} <br /> <span className="text-[#3B82F6]">{bold}</span>
+        <div className="col-span-1 py-20 md:pl-10 px-4 md:px-0">
+          <h4 className="font-semibold text-3xl md:text-5xl leading-tight ">
+            <SectionTitle>
+              {heading} <br /> <span className="text-[#3B82F6]">{bold}</span>
+            </SectionTitle>
           </h4>
-          <p className="pt-2 text-muted/60 dark:text-white/70">{description}</p>
-          <div className="mt-5">
+          <p
+            className="pt-3 md:pt-5
+           text-muted/60 dark:text-white/70 md:pr-6 "
+          >
+            {description}
+          </p>
+          <div className="mt-6 md:mt-8">
             <Button className="bg-white text-black" size="lg">
               Buy Now
             </Button>

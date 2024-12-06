@@ -46,7 +46,7 @@ function Nav() {
               <li>Home</li>
             </NavLink>
             <NavLink to={"/all-sports"}>
-              <li>All Sports</li>
+              <li>All Equipment</li>
             </NavLink>
             <NavLink to={"/add-equipment"}>
               <li>Add Equiement</li>
@@ -88,7 +88,7 @@ function Nav() {
             <div className="flex gap-4 items-center">
               <p title={user.displayName || "N/A"}>
                 <img
-                  className="w-10 rounded-full"
+                  className="w-10 h-10 object-cover rounded-full"
                   referrerPolicy="no-referrer"
                   src={
                     user.photoURL ||
@@ -129,7 +129,7 @@ function Nav() {
               <div className="flex gap-4 items-center">
                 <p title={user.displayName || "N/A"}>
                   <img
-                    className="w-8 rounded-full"
+                    className="w-8 h-8 object-cover  rounded-full"
                     referrerPolicy="no-referrer"
                     src={
                       user.photoURL ||

@@ -1,13 +1,19 @@
 import map from "@/assets/about-us/map.jpeg";
 import { Button } from "../ui/button";
 import SmallCards from "./SmallCards";
+import SectionTitle from "../animation/SectionTitle";
 function WorldWide() {
   return (
     <div className="px-4">
       <div>
         <h3 className="text-3xl font-bold">
-          Your Trusted Sports Partner <br />
-          <span className="text-destructive mt-3 block">Across the Globe</span>
+          <SectionTitle>
+            {" "}
+            Your Trusted Sports Partner <br />
+            <span className="text-destructive mt-3 block">
+              Across the Globe
+            </span>
+          </SectionTitle>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           <SmallCards head={"90%"} text={"Repeated Clients"} />

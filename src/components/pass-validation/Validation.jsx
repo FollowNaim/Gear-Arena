@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-function Validation({ setIsDisable }) {
+function Validation({ setIsDisable, setPass }) {
   const [password, setPassword] = useState("");
   const [score, setScore] = useState({});
   const PASSWORD_REQUIREMENTS = [
@@ -25,6 +25,7 @@ function Validation({ setIsDisable }) {
       };
     };
     setScore(validation());
+    setPass(password);
   }, [password]);
   useEffect(() => {
     setIsDisable(score.score >= 3 ? false : true);

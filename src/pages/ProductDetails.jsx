@@ -1,11 +1,28 @@
 import check from "@/assets/check.png";
 import remove from "@/assets/remove.png";
+import SectionTitle from "@/components/animation/SectionTitle";
+import SEO from "@/components/seo/SEO";
+import Spinner from "@/components/spinner/Spinner";
+import { useEffect, useState } from "react";
 import { BiCategory } from "react-icons/bi";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { LuBadgeDollarSign } from "react-icons/lu";
 import { MdOutlineStarBorder } from "react-icons/md";
-import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
 function ProductDetails() {
+  const [product, setProduct] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const params = useParams();
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`http://localhost:5000/products/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        setIsLoading(false);
+      });
+  }, []);
+  if (isLoading) return <Spinner />;
   const {
     _id,
     image,
@@ -17,19 +34,22 @@ function ProductDetails() {
     rating,
     stockStatus,
     processingTime,
-  } = useLoaderData();
+  } = product;
   return (
     <div>
       <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted dark:bg-[#141414] my-10">
+        <SEO title={itemName + " " + "| Gear Arena"} />
         <div className="h-full w-full">
           <img className="w-full h-full" src={image} alt="" />
         </div>
-        <div className="max-w-sm ml-10 py-10">
-          <h3 className="text-4xl font-bold">{itemName}</h3>
+        <div className="max-w-sm md:ml-10 px-4 md:px-0 py-10">
+          <h3 className="text-4xl font-bold">
+            <SectionTitle>{itemName}</SectionTitle>
+          </h3>
           <p className="text-muted-foreground pt-3">{description}</p>
-          <div className=" rounded-md mt-5">
-            <div className="flex items-center border border-destructive rounded-t-md">
-              <p className="border-r flex items-center flex-wrap gap-2 border-destructive p-3 w-44">
+          <div className="rounded-md mt-5">
+            <div className="flex items-center border border-destructive w-full rounded-t-md">
+              <p className="border-r flex items-center flex-wrap gap-2 border-destructive p-3 max-w-44 w-1/2">
                 <BiCategory /> :{" "}
                 <span className="text-primary/90">{categoryName}</span>
               </p>
@@ -39,11 +59,11 @@ function ProductDetails() {
               </p>
             </div>
             <div className="flex items-center border-x border-b border-destructive rounded-b-md">
-              <p className="border-r flex items-center gap-2 border-destructive p-3 w-44">
+              <p className="border-r flex items-center gap-2 border-destructive p-3 max-w-44  w-1/2">
                 <MdOutlineStarBorder /> :{" "}
                 <span className="text-primary/90">{rating}</span>
               </p>
-              <p className="pl-6 flex items-center gap-2 border-destructive">
+              <p className="flex pl-6 items-center gap-2 border-destructive">
                 <LiaShippingFastSolid /> :{" "}
                 <span className="text-primary/90">{processingTime} days</span>{" "}
               </p>
@@ -65,7 +85,7 @@ function ProductDetails() {
           </div>
           <div className="mt-6 flex items-center gap-8">
             <p className=" w-fit rounded-3xl flex items-center gap-2">
-              {stockStatus.availability === "instock" ? (
+              {stockStatus?.availability === "instock" ? (
                 <>
                   {" "}
                   <img className="w-6" src={check} alt="" /> In Stock
@@ -81,7 +101,7 @@ function ProductDetails() {
               <h4>
                 only{" "}
                 <span className="text-destructive">
-                  {stockStatus.quantity} items
+                  {stockStatus?.quantity} items
                 </span>{" "}
                 left!
               </h4>

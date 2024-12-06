@@ -16,12 +16,14 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="border-t border-dashed border-black/30">
-      <div className="container px-4 grid md:grid-cols-12 gap-8 md:gap-0 pt-14 pb-8">
-        <div className="col-span-3 pr-20 flex flex-col">
-          <h4 className="text-2xl font-bold">Gear Arena</h4>
+      <div className="container px-4 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 pt-14 pb-8">
+        <div className="md:col-span-3 md:pr-20 flex flex-col">
+          <h4 className="text-2xl font-bold">
+            Gear <span className="text-destructive">Arena</span>
+          </h4>
           <p className="text-muted-foreground mt-3">
-            Sentiments two occasional affronting <br /> solicitude travelling
-            and one contrasted fortune day
+            span Delivering premium sports gear to elevate your game and inspire
+            greatness.
           </p>
           <div className="mt-4">
             <p className="flex items-center gap-3">
@@ -39,7 +41,7 @@ function Footer() {
           </div>
           <img className="mt-4" src={payPhoto} alt="" />
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <h4>Quick Links</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
@@ -67,7 +69,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <h4>Customer Support</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
@@ -94,7 +96,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <h4>Legal</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
@@ -121,7 +123,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-3">
           <h4>Our Instagram</h4>
           <div className="grid grid-cols-3 gap-3 mt-6">
             <img className="rounded-xl" src={footer1} alt="" />

@@ -20,7 +20,6 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/limited-products"),
       },
       {
         path: "/products/:id",
@@ -29,8 +28,6 @@ export const routes = createBrowserRouter([
             <ProductDetails />
           </PrivateRoutes>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "/products/update/:id",
@@ -39,13 +36,10 @@ export const routes = createBrowserRouter([
             <UpdateEquipment />
           </PrivateRoutes>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "/all-sports",
         element: <AllSports />,
-        loader: () => fetch("http://localhost:5000/all-products"),
       },
       {
         path: "/add-equipment",

@@ -1,3 +1,4 @@
+import SectionTitle from "../animation/SectionTitle";
 import Product from "./Product";
 
 function Products({ products }) {
@@ -5,7 +6,9 @@ function Products({ products }) {
     <div>
       <div className="text-center">
         <h3 className="text-3xl font-bold">
-          Gear for <span className="text-destructive">Greatness</span>
+          <SectionTitle>
+            Gear for <span className="text-destructive">Greatness</span>
+          </SectionTitle>
         </h3>
         <p className="mt-3 text-primary/80">
           Where performance meets precision – <br /> elevate your game with our

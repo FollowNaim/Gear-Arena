@@ -1,9 +1,14 @@
+import { themeContext } from "@/provider/ThemeProvider";
+import { useContext } from "react";
+
 function Spinner() {
+  const { theme } = useContext(themeContext);
   return (
     <div className="w-full h-[70vh] flex flex-col justify-center items-center">
       <svg
-        width="24"
-        height="24"
+        fill={theme ? "#fff" : "#000"}
+        width="28"
+        height="28"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >

@@ -4,27 +4,31 @@ import img4 from "@/assets/about-us/team-success.png";
 import img2 from "@/assets/about-us/tennis.png";
 import { AnimatedTooltipPreview } from "@/components/about-us/Tooltip";
 import ValuesCard from "@/components/about-us/ValuesCard";
-import { Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
+import SectionTitle from "../animation/SectionTitle";
 
 function AboutUs() {
   return (
     <div className="bg-muted dark:bg-[#141414] my-10">
       <div className="container px-4 py-10">
         <div className="flex justify-center flex-col items-center text-center">
-          <Slide>
-            <h3 className="text-3xl font-bold">
+          <h3 className="text-3xl font-bold">
+            <SectionTitle>
               <span className="text-2xl"> Our Core Values : </span>
               <p className="mt-2">
                 Built for <span className="text-destructive">Champions,</span>{" "}
                 By Champions
               </p>
-            </h3>
-          </Slide>
-          <p className="mt-3 text-primary/80">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-            error?
+            </SectionTitle>
+          </h3>
+
+          <p className="mt-3 text-primary/80 text-center">
+            <Fade cascade damping={1e-1} duration={1000}>
+              Empowering athletes worldwide with gear designed by those who
+              understand the spirit of competition firsthand.
+            </Fade>
           </p>
-          <div className="flex items-center gap-4 mt-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 mt-8">
             <p>Meet Our Champions -</p>
             <div>
               <AnimatedTooltipPreview />

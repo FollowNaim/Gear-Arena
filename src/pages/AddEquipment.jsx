@@ -1,4 +1,5 @@
 import fillAnimation from "@/assets/animation/fill.json";
+import SEO from "@/components/seo/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -71,12 +72,13 @@ export default function AddEquipment() {
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
+      <SEO title={"Add Equipment | Gear Arena"} />
       <form className="w-full max-w-md mx-auto" onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl">Add Equipment</CardTitle>
             <CardDescription>
-              Add a new user to the admin dashboard.
+              Expand your collection with the latest gear additions.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

@@ -1,7 +1,7 @@
 // Import Swiper React components
-import slide1 from "@/assets/yoga.png";
 import slide2 from "@/assets/slide-2.jpg";
 import slide3 from "@/assets/slide-3.jpg";
+import slide1 from "@/assets/yoga.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -36,7 +36,7 @@ export default function Sliders() {
               heading={"Never Low Your "}
               bold={"Standard."}
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo optio distinctio laboriosam hic cupiditate dicta voluptates omnis"
+                "Elevate your game with premium gear crafted for unparalleled performance and unwavering excellence."
               }
               image={slide1}
             />
@@ -46,7 +46,7 @@ export default function Sliders() {
               heading={"Your Game,"}
               bold={" Our Equipment."}
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo optio distinctio laboriosam hic cupiditate dicta voluptates omnis"
+                "Empowering every move with precision-engineered sports gear designed to match your passion and drive."
               }
               image={slide2}
             />
@@ -56,7 +56,7 @@ export default function Sliders() {
               heading={"Chase Your Goals"}
               bold={"Every Step Matters."}
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo optio distinctio laboriosam hic cupiditate dicta voluptates omnis"
+                "Equipping you with the tools to conquer challenges and achieve greatness, one step at a time."
               }
               image={slide3}
             />

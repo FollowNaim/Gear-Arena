@@ -1,4 +1,5 @@
 import updateAnimation from "@/assets/animation/update.json";
+import SEO from "@/components/seo/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,12 +20,24 @@ import {
 } from "@/components/ui/select";
 import { AuthContext } from "@/provider/AuthProvider";
 import Lottie from "lottie-react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function UpdateEquipment() {
   const { user } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const [product, setProduct] = useState([]);
+  const params = useParams();
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`http://localhost:5000/products/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        setIsLoading(false);
+      });
+  }, []);
   const [inStock, setInStock] = useState("instock");
   const navigate = useNavigate();
   const {
@@ -40,7 +53,7 @@ export default function UpdateEquipment() {
     stockStatus,
     userEmail,
     userName,
-  } = useLoaderData();
+  } = product;
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -85,6 +98,7 @@ export default function UpdateEquipment() {
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
+      <SEO title={"Update Equipment | Gear Arena"} />
       <form className="w-full " onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">
           <CardHeader className="space-y-1 text-center">
@@ -198,7 +212,7 @@ export default function UpdateEquipment() {
                 <Select
                   id="status"
                   onValueChange={(val) => setInStock(val)}
-                  defaultValue={stockStatus.availability || "instock"}
+                  defaultValue={stockStatus?.availability || "instock"}
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Select a role" />
@@ -216,7 +230,7 @@ export default function UpdateEquipment() {
                   required
                   name="available"
                   id="available"
-                  defaultValue={stockStatus.quantity}
+                  defaultValue={stockStatus?.quantity}
                   type="number"
                   placeholder="Enter the available quantity."
                 />

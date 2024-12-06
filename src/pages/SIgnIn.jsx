@@ -1,4 +1,5 @@
 import loginAnimation from "@/assets/animation/login.json";
+import SEO from "@/components/seo/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,7 +18,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function SignIn() {
-  const { handleGoogleLogin, handleGithubLogin, handleSingIn } =
+  const { handleGoogleLogin, setLoading, handleGithubLogin, handleSingIn } =
     useContext(AuthContext);
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ export default function SignIn() {
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto px-4 items-center">
+      <SEO title={"Sign In | Gear Arena"} />
       <Card
         className="md:max-w-sm w-full
        mx-auto my-10 col-span-1"
@@ -63,7 +65,7 @@ export default function SignIn() {
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter your info below to login to your account
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
