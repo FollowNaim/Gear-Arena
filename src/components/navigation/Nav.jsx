@@ -55,9 +55,11 @@ function Nav() {
             <NavLink to={"/my-equipments"}>
               <li>My Equipement</li>
             </NavLink>
-            <Button className="block md:hidden" onClick={handleLogout}>
-              Log Out
-            </Button>
+            {user && (
+              <Button className="block md:hidden" onClick={handleLogout}>
+                Log Out
+              </Button>
+            )}
           </ul>
         </div>
 
