@@ -1,4 +1,5 @@
 import map from "@/assets/about-us/map.jpeg";
+import { Link } from "react-router-dom";
 import SectionTitle from "../animation/SectionTitle";
 import { Button } from "../ui/button";
 import SmallCards from "./SmallCards";
@@ -23,7 +24,7 @@ function WorldWide() {
         </div>
       </div>
       <div className="grid md:grid-cols-12 items-center mt-14">
-        <div className="col-span-5 pr-6">
+        <div className="col-span-5 mt-5 md:mt-0 pr-6">
           <p>
             {" "}
             From the energetic streets of bustling cities to the tranquil beauty
@@ -37,7 +38,9 @@ function WorldWide() {
             Gear Up,{" "}
             <span className="text-destructive">No Matter Where You Are –</span>{" "}
           </p>
-          <Button className="mt-4">Explore Our Collection Now!</Button>
+          <Link to={"/all-equipments"}>
+            <Button className="mt-4">Explore Our Collection Now!</Button>
+          </Link>
         </div>
         <div className="col-span-7 order-first md:order-none">
           <img className="ml-auto" src={map} alt="" />

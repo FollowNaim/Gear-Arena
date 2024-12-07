@@ -1,5 +1,4 @@
 import aboutus from "@/assets/about.png";
-import aboutusDark from "@/assets/dark-about.png";
 import five from "@/assets/why-choose/five.png";
 import four from "@/assets/why-choose/four.png";
 import one from "@/assets/why-choose/one.png";
@@ -7,10 +6,11 @@ import peep from "@/assets/why-choose/peep1.png";
 import six from "@/assets/why-choose/six.png";
 import three from "@/assets/why-choose/three.png";
 import two from "@/assets/why-choose/two.png";
-import { useContext } from "react";
-import { Button } from "../ui/button";
 import { themeContext } from "@/provider/ThemeProvider";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import SectionTitle from "../animation/SectionTitle";
+import { Button } from "../ui/button";
 function WhyChoose() {
   const { theme } = useContext(themeContext);
   return (
@@ -107,9 +107,11 @@ function WhyChoose() {
           </div>
         </div>
         <div className="flex items-center justify-center w-full mt-5">
-          <Button className="dark:bg-black dark:text-white">
-            Explore Our Collection
-          </Button>
+          <Link to={"/all-equipments"}>
+            <Button className="dark:bg-black dark:text-white">
+              Explore Our Collection
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

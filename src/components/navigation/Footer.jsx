@@ -144,13 +144,13 @@ function Footer() {
             <a href="https://facebook.com">
               <FaFacebook className="hover:text-black" size={22} color="blue" />
             </a>
-            <a href="https://facebook.com">
+            <a href="https://instagram.com">
               <FaInstagram className="hover:text-black" size={22} color="red" />
             </a>
-            <a href="https://facebook.com">
+            <a href="https://youtube.com">
               <FaYoutube className="hover:text-black" size={22} color="red" />
             </a>
-            <a href="https://facebook.com">
+            <a href="https://linkedin.com">
               <FaLinkedin className="hover:text-black" size={22} color="blue" />
             </a>
           </div>

@@ -4,7 +4,6 @@ import img4 from "@/assets/about-us/team-success.png";
 import img2 from "@/assets/about-us/tennis.png";
 import { AnimatedTooltipPreview } from "@/components/about-us/Tooltip";
 import ValuesCard from "@/components/about-us/ValuesCard";
-import { Fade } from "react-awesome-reveal";
 import SectionTitle from "../animation/SectionTitle";
 
 function AboutUs() {
@@ -22,17 +21,11 @@ function AboutUs() {
             </SectionTitle>
           </h3>
 
-          <p className="mt-3 hidden md:block text-primary/80 text-center w-full px-4 md:px-0">
-            <Fade cascade damping={1e-1} duration={1000}>
-              Empowering athletes worldwide with gear designed by those who
-              understand the spirit of competition firsthand.
-            </Fade>
+          <p className="mt-3text-primary/80 text-center w-full px-4 md:px-0">
+            Empowering athletes worldwide with gear designed by those who
+            understand the spirit of competition firsthand.
           </p>
-          <p className="mt-3 block md:hidden text-primary/80 text-center w-full px-4 md:px-0 ">
-            <Fade className="w-10" cascade damping={1e-1} duration={1000}>
-              Empowering athletes with gear crafted by champions
-            </Fade>
-          </p>
+
           <div className="flex flex-col md:flex-row items-center gap-4 mt-8">
             <p>Meet Our Champions -</p>
             <div>
