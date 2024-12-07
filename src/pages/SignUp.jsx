@@ -20,7 +20,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
-  const { handleSignUp } = useContext(AuthContext);
+  const { handleSignUp, setLoading } = useContext(AuthContext);
   const [isDisable, setIsDisable] = useState(true);
   const [pass, setPass] = useState("");
   const navigate = useNavigate();
@@ -41,8 +41,7 @@ export default function SignUp() {
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: photo,
-        }).then();
-
+        });
         navigate("/");
         fetch("https://geararena-server.vercel.app/users", {
           method: "POST",
@@ -54,9 +53,15 @@ export default function SignUp() {
             email: res.user.email,
             photo: res.user.photoURL,
           }),
-        }).then((res) => res.json());
+        }).then((res) => {
+          res.json();
+          setLoading(false);
+        });
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => {
+        console.log(err.message);
+        setLoading(false);
+      });
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full max-w-7xl mx-auto my-10 px-4">

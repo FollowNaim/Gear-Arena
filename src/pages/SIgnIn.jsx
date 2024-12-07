@@ -30,7 +30,10 @@ export default function SignIn() {
         error: (err) => <b>{err.message || "Could not sign in!"}</b>,
       })
       .then((res) => navigate(state ? state : "/"))
-      .catch((err) => console.log(err.message));
+      .catch((err) => {
+        console.log(err.message);
+        setLoading(false);
+      });
   };
   const handleGithub = () => {
     toast
@@ -40,7 +43,10 @@ export default function SignIn() {
         error: (err) => <b>{err.message || "Could not sign in!"}</b>,
       })
       .then((res) => navigate(state ? state : "/"))
-      .catch((err) => console.log(err.message));
+      .catch((err) => {
+        console.log(err.message);
+        setLoading(false);
+      });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +58,11 @@ export default function SignIn() {
         success: <b>Signed In Successfull!</b>,
         error: (err) => <b>{err.message || "Could not sign in!"}</b>,
       })
-      .catch((err) => console.log(err.message));
+      .then(() => navigate(state ? state : "/"))
+      .catch((err) => {
+        console.log(err.message);
+        setLoading(false);
+      });
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto px-4 items-center">
