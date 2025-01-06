@@ -34,12 +34,12 @@ function About() {
             <div className="grow">
               <div className="grid grid-cols-2 items-center gap-4">
                 <img
-                  className="h-40 object-cover rounded-md"
+                  className="h-40 w-full object-cover rounded-md"
                   src={about3}
                   alt=""
                 />
                 <img
-                  className="h-40 object-cover rounded-md"
+                  className="h-40 w-full object-cover rounded-md"
                   src={about4}
                   alt=""
                 />
