@@ -1,3 +1,11 @@
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import Moon from "@/lib/Moon";
 import Sun from "@/lib/Sun";
 import { AuthContext } from "@/provider/AuthProvider";
@@ -6,7 +14,6 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Tooltip } from "react-tooltip";
 import { IconButton } from "../icon-btn/IconBtn";
 import { Button } from "../ui/button";
 
@@ -27,7 +34,7 @@ function Nav() {
   }, [pathname]);
   return (
     <div>
-      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed w-full left-1/2 -translate-x-1/2 top-0 z-50 bg-white/40 backdrop-blur-md dark:bg-black/40">
+      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed w-screen left-1/2 -translate-x-1/2 top-0 z-50 bg-white/40 backdrop-blur-md dark:bg-black/40 overflow-auto">
         <div>
           <Link to={"/"}>
             <h1 className="font-semibold text-2xl">GearArena</h1>
@@ -37,7 +44,7 @@ function Nav() {
         <div
           className={`absolute md:static w-full bg-black/30 backdrop-blur-lg md:backdrop-blur-none py-10 md:py-0  ${
             isOpen ? "translate-y-52" : "-translate-y-full"
-          } duration-300 ease-in-out md:w-fit transition-transform md:bg-transparent md:translate-y-0  z-40 left-0`}
+          } duration-300 ease-in-out md:w-fit transition-transform md:bg-transparent md:translate-y-0 font-normal  z-40 left-0`}
         >
           <ul
             className="flex flex-col md:flex-row items-center gap-6"
@@ -55,16 +62,7 @@ function Nav() {
             <NavLink to={"/contact"}>
               <li>Contact</li>
             </NavLink>
-            {user && (
-              <>
-                <NavLink to={"/add-equipment"}>
-                  <li>Add Equiement</li>
-                </NavLink>
-                <NavLink to={"/my-equipments"}>
-                  <li>My Equipement</li>
-                </NavLink>
-              </>
-            )}
+
             {user && (
               <Button className="block md:hidden" onClick={handleLogout}>
                 Log Out
@@ -97,23 +95,32 @@ function Nav() {
               </Link>
             </div>
           )}
-          <Tooltip id="name-tooltip" />
+
           {user && (
             <div className="flex gap-4 items-center">
-              <p
-                data-tooltip-id="name-tooltip"
-                data-tooltip-content={user.displayName || "N/A"}
-              >
-                <img
-                  className="w-10 h-10 object-cover rounded-full"
-                  referrerPolicy="no-referrer"
-                  src={
-                    user.photoURL ||
-                    "https://i.ibb.co.com/6H3SMRm/user-profile-icon-vector-avatar-600nw-2247726673-removebg-preview.png"
-                  }
-                  alt=""
-                />
-              </p>
+              <DropdownMenu modal={false}>
+                <DropdownMenuTrigger>
+                  <img
+                    className="w-10 h-10 object-cover rounded-full"
+                    referrerPolicy="no-referrer"
+                    src={
+                      user.photoURL ||
+                      "https://i.ibb.co.com/6H3SMRm/user-profile-icon-vector-avatar-600nw-2247726673-removebg-preview.png"
+                    }
+                    alt=""
+                  />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator></DropdownMenuSeparator>
+                  <NavLink to={"/add-equipment"}>
+                    <DropdownMenuItem>Add Equiement</DropdownMenuItem>
+                  </NavLink>
+                  <NavLink to={"/my-equipments"}>
+                    <DropdownMenuItem>My Equipement</DropdownMenuItem>
+                  </NavLink>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               <Button onClick={handleLogout}>Log Out</Button>
             </div>

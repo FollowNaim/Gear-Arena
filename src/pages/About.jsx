@@ -30,7 +30,7 @@ function About() {
               />
             </div>
           </div>
-          <div className="pr-6 flex flex-col">
+          <div className="flex flex-col">
             <div className="grow">
               <div className="flex items-center gap-4">
                 <img
@@ -44,7 +44,7 @@ function About() {
                   alt=""
                 />
               </div>
-              <div className="mt-6">
+              <div className="mt-6 pr-6 ">
                 <p>
                   At Gear Arena, we specialize in delivering high-quality tools
                   and equipment designed to meet your needs. With a focus on
@@ -53,7 +53,7 @@ function About() {
                   confidence.
                 </p>
               </div>
-              <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center justify-between mt-4 pr-6 ">
                 <div>
                   <p className="font-bold text-xl">10K+</p>
                   <p>Equipment Sold</p>

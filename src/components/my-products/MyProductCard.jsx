@@ -56,7 +56,9 @@ export default function MyProductCard({ product, setProducts, products }) {
           alt=""
         />
         <CardTitle className="text-2xl">{itemName}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardDescription className="line-clamp-2">
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex items-center">
