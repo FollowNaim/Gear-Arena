@@ -32,7 +32,7 @@ function MyEquipment() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/my-equipment", {
+    fetch("https://geararena-server.vercel.app/my-equipment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,7 @@ function MyEquipment() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://geararena-server.vercel.app/products/${id}`, {
           method: "DELETE",
         }).then(() => {
           {

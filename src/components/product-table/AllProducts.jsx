@@ -14,7 +14,7 @@ export default function AllProducts({ products, setProducts }) {
   const [selectVal, setSelectVal] = useState("");
   console.log(products);
   useEffect(() => {
-    fetch(`http://localhost:5000/products?sort=${selectVal}`)
+    fetch(`https://geararena-server.vercel.app/products?sort=${selectVal}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

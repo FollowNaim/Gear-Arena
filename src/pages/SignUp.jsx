@@ -43,7 +43,7 @@ export default function SignUp() {
           photoURL: photo,
         });
         navigate("/");
-        fetch("http://localhost:5000/users", {
+        fetch("https://geararena-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
