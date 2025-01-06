@@ -1,5 +1,5 @@
 import about2 from "@/assets/about-page/about-2.jpg";
-import about3 from "@/assets/about-page/about-3.png";
+import about3 from "@/assets/about-page/about-3.jpg";
 import about4 from "@/assets/about-page/about-4.jpg";
 import MeetTeam from "@/components/about-us/meet-team";
 import AvatarGroupMaxAvatarDemo from "@/components/ui/avatar-group";
