@@ -65,7 +65,7 @@ export default function SignIn() {
       });
   };
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto px-4 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto px-4 items-center mt-10">
       <SEO title={"Sign In | Gear Arena"} />
       <Card
         className="md:max-w-sm w-full

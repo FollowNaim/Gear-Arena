@@ -23,7 +23,7 @@ import { Button } from "../ui/button";
 export default function Tables({ products, setProducts }) {
   const [selectVal, setSelectVal] = useState("");
   useEffect(() => {
-    fetch(`https://geararena-server.vercel.app/products?sort=${selectVal}`)
+    fetch(`http://localhost:5000/products?sort=${selectVal}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

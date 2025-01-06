@@ -43,7 +43,7 @@ export default function SignUp() {
           photoURL: photo,
         });
         navigate("/");
-        fetch("https://geararena-server.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -64,7 +64,7 @@ export default function SignUp() {
       });
   };
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full max-w-7xl mx-auto my-10 px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full max-w-7xl mx-auto mt-20 mb-10 px-4">
       <SEO title={"Sign Up | Gear Arena"} />
       <form className="col-span-1" onSubmit={handleSubmit}>
         <Card className="md:max-w-sm w-full  mx-auto ">

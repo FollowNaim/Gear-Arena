@@ -27,7 +27,7 @@ function Nav() {
   }, [pathname]);
   return (
     <div>
-      <div className="container flex justify-between items-center py-2 px-4 border-b border-border">
+      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed top-0 z-50 bg-white dark:bg-black">
         <div>
           <Link to={"/"}>
             <h1 className="font-semibold text-2xl">GearArena</h1>

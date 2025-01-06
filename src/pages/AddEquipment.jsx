@@ -55,7 +55,7 @@ export default function AddEquipment() {
     };
     toast
       .promise(
-        fetch("https://geararena-server.vercel.app/products", {
+        fetch("http://localhost:5000/products", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -71,7 +71,7 @@ export default function AddEquipment() {
       .then((res) => navigate("/all-equipments"));
   };
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-20 mb-14 px-4 md:px-6">
       <SEO title={"Add Equipment | Gear Arena"} />
       <form className="w-full max-w-md mx-auto" onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">

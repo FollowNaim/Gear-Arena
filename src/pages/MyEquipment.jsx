@@ -14,7 +14,7 @@ function MyEquipment() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setLoading(true);
-    fetch("https://geararena-server.vercel.app/my-equipment", {
+    fetch("http://localhost:5000/my-equipment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,7 +34,7 @@ function MyEquipment() {
   if (loading) return <Spinner />;
 
   return (
-    <div className="my-10">
+    <div className="mt-20 mb-10">
       <SEO title={"My Equipment | Gear Arena"} />
       <div className="container px-4">
         {!products.length ? (

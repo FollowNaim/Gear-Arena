@@ -12,7 +12,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://geararena-server.vercel.app/products?limit=6")
+    fetch("http://localhost:5000/products?limit=6")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -21,7 +21,7 @@ function Home() {
   }, []);
   if (isLoading) return <Spinner />;
   return (
-    <div className="mb-16 mt-10">
+    <div className="mb-16 mt-20">
       <SEO title={"Home | Gear Arena"} />
       {/* <Hero /> */}
       <Sliders />

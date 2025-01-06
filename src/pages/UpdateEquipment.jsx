@@ -31,7 +31,7 @@ export default function UpdateEquipment() {
   const params = useParams();
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://geararena-server.vercel.app/products/${params.id}`)
+    fetch(`http://localhost:5000/products/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -81,7 +81,7 @@ export default function UpdateEquipment() {
 
     toast
       .promise(
-        fetch(`https://geararena-server.vercel.app/products/${_id}`, {
+        fetch(`http://localhost:5000/products/${_id}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -97,7 +97,7 @@ export default function UpdateEquipment() {
       .then((res) => navigate("/all-equipments"));
   };
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-10 mb-14 px-4 md:px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto items-center justify-center mt-20 mb-14 px-4 md:px-6">
       <SEO title={"Update Equipment | Gear Arena"} />
       <form className="w-full " onSubmit={handleSubmit}>
         <Card className="w-full max-w-lg mx-auto">

@@ -15,7 +15,7 @@ function ProductDetails() {
   const params = useParams();
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://geararena-server.vercel.app/products/${params.id}`)
+    fetch(`http://localhost:5000/products/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -37,7 +37,7 @@ function ProductDetails() {
   } = product;
   return (
     <div>
-      <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted dark:bg-[#141414] my-10">
+      <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted dark:bg-[#141414] mt-20 mb-10">
         <SEO title={itemName + " " + "| Gear Arena"} />
         <div className="h-full w-full">
           <img className="w-full h-full" src={image} alt="" />
