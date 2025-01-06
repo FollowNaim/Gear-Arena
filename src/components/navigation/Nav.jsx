@@ -41,7 +41,7 @@ function Nav() {
           </Link>
         </div>
         <div
-          className={`absolute md:static w-full dark:bg-white dark:text-black bg-black text-white backdrop-blur-lg md:backdrop-blur-none py-10 md:py-0  ${
+          className={`absolute md:static w-full bg-black text-white md:text-black dark:text-white backdrop-blur-lg md:backdrop-blur-none py-10 md:py-0  ${
             isOpen ? "translate-y-60" : "-translate-y-full"
           } duration-300 ease-in-out md:w-fit transition-transform md:bg-transparent md:translate-y-0 font-normal  z-[9999] left-0`}
         >
@@ -64,10 +64,12 @@ function Nav() {
 
             {user && (
               <>
-                <NavLink to={"/add-equipment"}>Add Equiement</NavLink>
-                <NavLink to={"/my-equipments"}>My Equipement</NavLink>
+                <div className="md:hidden flex flex-col gap-6">
+                  <NavLink to={"/add-equipment"}>Add Equiement</NavLink>
+                  <NavLink to={"/my-equipments"}>My Equipement</NavLink>
+                </div>
                 <Button
-                  className="block md:hidden text-black dark:text-white bg-white dark:bg-black"
+                  className="block md:hidden hover:text-black/90 hover:bg-white/90 text-black  bg-white "
                   onClick={handleLogout}
                 >
                   Log Out

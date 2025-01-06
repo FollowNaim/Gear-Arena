@@ -6,6 +6,7 @@ import WhyChoose from "@/components/why-choose/WhyChoose";
 import WorldWide from "@/components/world-wide/WorldWide";
 import { useEffect, useState } from "react";
 import AboutUs from "../components/about-us/AboutUs";
+import BoostCreativity from "@/components/home/Boost-Creativity";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -27,6 +28,7 @@ function Home() {
       <Sliders />
       <AboutUs />
       <Products products={products} />
+      <BoostCreativity />
       <WhyChoose />
       <WorldWide />
     </div>
