@@ -12,7 +12,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/products?limit=6")
+    fetch("http://localhost:5000/products?limit=8")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

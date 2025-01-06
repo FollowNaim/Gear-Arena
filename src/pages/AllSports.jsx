@@ -1,4 +1,4 @@
-import Tables from "@/components/product-table/Tables";
+import AllProducts from "@/components/product-table/AllProducts";
 import SEO from "@/components/seo/SEO";
 import Spinner from "@/components/spinner/Spinner";
 import { useEffect, useState } from "react";
@@ -19,7 +19,7 @@ function AllSports() {
   return (
     <div>
       <SEO title={"All-Sports | Gear Arena"} />
-      <Tables products={products} setProducts={setProducts} />
+      <AllProducts products={products} setProducts={setProducts} />
     </div>
   );
 }

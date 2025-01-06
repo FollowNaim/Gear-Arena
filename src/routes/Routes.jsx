@@ -1,6 +1,8 @@
 import RootLayout from "@/layouts/RootLayout";
+import About from "@/pages/About";
 import AddEquipment from "@/pages/AddEquipment";
 import AllSports from "@/pages/AllSports";
+import Contact from "@/pages/Contact";
 import Error404 from "@/pages/Error404";
 import Home from "@/pages/Home";
 import MyEquipment from "@/pages/MyEquipment";
@@ -23,11 +25,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/products/:id",
-        element: (
-          <PrivateRoutes>
-            <ProductDetails />
-          </PrivateRoutes>
-        ),
+        element: <ProductDetails />,
       },
       {
         path: "/products/update/:id",
@@ -56,6 +54,14 @@ export const routes = createBrowserRouter([
             <MyEquipment />
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/auth/signin",

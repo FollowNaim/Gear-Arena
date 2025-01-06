@@ -1,13 +1,6 @@
+import { CiBadgeDollar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 
 function Product({ product }) {
   const {
@@ -21,49 +14,31 @@ function Product({ product }) {
     stockStatus,
   } = product;
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="grow">
+    <div className="border border-border rounded-md flex flex-col">
+      <div>
         <img
-          className="h-52 mb-3 rounded-md object-cover w-full"
           src={image}
+          className="h-40 w-full object-cover rounded-t-md"
           alt=""
         />
-        <CardTitle className="text-2xl">{itemName}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex items-center">
-          <p className="border-r border-border pr-3">
-            Category :{" "}
-            <span className="text-muted-foreground/90">{categoryName}</span>
+      </div>
+      <div className="p-4 flex flex-col grow">
+        <div className="grow">
+          <h2 className="text-xl font-semibold">{itemName}</h2>
+          <p className="text-muted-foreground pt-2 line-clamp-2 overflow-hidden text-ellipsis">
+            {description}
           </p>
-
-          {stockStatus.availability === "instock" ? (
-            <p className="ml-3 bg-green-100 text-sm text-green-600 px-3">
-              In Stock
-            </p>
-          ) : (
-            <p className="ml-3 bg-red-100 text-sm text-red-600 px-3">
-              Out of Stock
-            </p>
-          )}
-        </div>
-        <div className="flex items-center mt-4">
-          <p className="border-r border-border pr-3">
-            Price : <span className="text-muted-foreground/90">{price}$</span>
-          </p>
-
-          <p className="pl-3">
-            Rating : <span className="text-muted-foreground/90">{rating}</span>
+          <p className="pt-2 flex items-center gap-2">
+            <CiBadgeDollar /> {price}
           </p>
         </div>
-      </CardContent>
-      <CardFooter>
-        <Link to={`/products/${_id}`}>
-          <Button className="">View Details</Button>
-        </Link>
-      </CardFooter>
-    </Card>
+        <div className="mt-4">
+          <Link to={`/products/${_id}`}>
+            <Button>See More</Button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 

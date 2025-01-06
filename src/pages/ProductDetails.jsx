@@ -35,12 +35,14 @@ function ProductDetails() {
     stockStatus,
     processingTime,
   } = product;
+  const cust = customization.split(",");
+  console.log(customization, cust);
   return (
     <div>
       <div className="container md:pr-4 grid md:grid-cols-2 justify-center items-center gap-4 bg-muted dark:bg-[#141414] mt-20 mb-10">
         <SEO title={itemName + " " + "| Gear Arena"} />
         <div className="h-full w-full">
-          <img className="w-full h-full" src={image} alt="" />
+          <img className="w-full h-full object-cover" src={image} alt="" />
         </div>
         <div className="max-w-sm md:ml-10 px-4 md:px-0 py-10">
           <h3 className="text-4xl font-bold">
@@ -70,10 +72,18 @@ function ProductDetails() {
             </div>
           </div>
           <div className="mt-6">
-            <div className="border-y py-2 border-dashed border-destructive/50 flex items-center gap-4">
+            <div className="border-y py-2 border-dashed border-destructive/50 flex flex-col gap-4">
               <h3 className="text-destructive">Customization : </h3>
-              <div className="flex items-center gap-2 text-primary/90">
-                <p> {customization}</p>
+              <div
+                className="flex flex-col
+                gap-2 text-primary/90 mb-4"
+              >
+                {cust.map((c, i) => (
+                  <p key={i}>
+                    <span className="text-destructive">({i + 1})</span>{" "}
+                    <span className="ml-2">{c}</span>
+                  </p>
+                ))}
               </div>
             </div>
           </div>

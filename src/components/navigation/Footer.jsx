@@ -51,17 +51,17 @@ function Footer() {
                 </li>
               </Link>
 
-              <Link to={"/auth/signin"}>
+              <Link to={"/all-equipments"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Shop
+                  Equipments
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"/about"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
                   About Us
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"/contact"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
                   Contact Us
                 </li>

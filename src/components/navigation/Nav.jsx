@@ -27,7 +27,7 @@ function Nav() {
   }, [pathname]);
   return (
     <div>
-      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed top-0 z-50 bg-white dark:bg-black">
+      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed w-full left-1/2 -translate-x-1/2 top-0 z-50 bg-white/40 backdrop-blur-md dark:bg-black/40">
         <div>
           <Link to={"/"}>
             <h1 className="font-semibold text-2xl">GearArena</h1>
@@ -35,7 +35,7 @@ function Nav() {
         </div>
 
         <div
-          className={`absolute md:static w-full bg-black/30 backdrop-blur-lg py-10 md:py-0  ${
+          className={`absolute md:static w-full bg-black/30 backdrop-blur-lg md:backdrop-blur-none py-10 md:py-0  ${
             isOpen ? "translate-y-52" : "-translate-y-full"
           } duration-300 ease-in-out md:w-fit transition-transform md:bg-transparent md:translate-y-0  z-40 left-0`}
         >
@@ -49,12 +49,22 @@ function Nav() {
             <NavLink to={"/all-equipments"}>
               <li>All Equipment</li>
             </NavLink>
-            <NavLink to={"/add-equipment"}>
-              <li>Add Equiement</li>
+            <NavLink to={"/about"}>
+              <li>About us</li>
             </NavLink>
-            <NavLink to={"/my-equipments"}>
-              <li>My Equipement</li>
+            <NavLink to={"/contact"}>
+              <li>Contact</li>
             </NavLink>
+            {user && (
+              <>
+                <NavLink to={"/add-equipment"}>
+                  <li>Add Equiement</li>
+                </NavLink>
+                <NavLink to={"/my-equipments"}>
+                  <li>My Equipement</li>
+                </NavLink>
+              </>
+            )}
             {user && (
               <Button className="block md:hidden" onClick={handleLogout}>
                 Log Out
