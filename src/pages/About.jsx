@@ -1,13 +1,15 @@
 import about2 from "@/assets/about-page/about-2.jpg";
-import about4 from "@/assets/about-page/about-4.jpg";
 import about3 from "@/assets/about-page/about-3.png";
+import about4 from "@/assets/about-page/about-4.jpg";
+import MeetTeam from "@/components/about-us/meet-team";
 import AvatarGroupMaxAvatarDemo from "@/components/ui/avatar-group";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 function About() {
   return (
     <div className="mt-20 mb-10">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="flex flex-col">
             <div className="mb-6">
               <h4 className="text-3xl font-bold">
@@ -42,15 +44,16 @@ function About() {
                   alt=""
                 />
               </div>
-              <div className="mt-4">
+              <div className="mt-6">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                  quia nostrum eaque error hic dicta iste, quas tenetur ullam
-                  tempora voluptates iure ex repellat, maiores unde animi
-                  delectus sint. Perspiciatis.
+                  At Gear Arena, we specialize in delivering high-quality tools
+                  and equipment designed to meet your needs. With a focus on
+                  reliability and innovation, we are dedicated to empowering
+                  individuals and businesses to achieve their goals with
+                  confidence.
                 </p>
               </div>
-              <div className="flex items-center justify-between mt-8">
+              <div className="flex items-center justify-between mt-4">
                 <div>
                   <p className="font-bold text-xl">10K+</p>
                   <p>Equipment Sold</p>
@@ -73,10 +76,15 @@ function About() {
                 <AvatarGroupMaxAvatarDemo />
               </div>
             </div>
-            <div className="mt-auto">
-              <Button size="lg">Connect with us</Button>
+            <div className="mt-8 md:mt-0">
+              <Link to={"/contact"}>
+                <Button size="lg">connect with us</Button>
+              </Link>
             </div>
           </div>
+        </div>
+        <div className="mt-10">
+          <MeetTeam />
         </div>
       </div>
     </div>
