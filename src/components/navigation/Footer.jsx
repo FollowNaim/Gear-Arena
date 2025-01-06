@@ -5,8 +5,10 @@ import footer4 from "@/assets/footer4.jpg";
 import footer5 from "@/assets/footer5.jpg";
 import footer6 from "@/assets/footer6.jpg";
 import payPhoto from "@/assets/payment.png";
+import { Linkedin } from "lucide-react";
 import {
   FaFacebook,
+  FaGithub,
   FaInstagram,
   FaLinkedin,
   FaYoutube,
@@ -70,54 +72,54 @@ function Footer() {
           </div>
         </div>
         <div className="md:col-span-2">
-          <h4>Customer Support</h4>
+          <h4>Essential Links</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
               <Link to={"/auth/signin"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  FAQ
+                  Signin
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"/auth/signup"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Shipping & Delivery
+                  Register
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"/my-equipments"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Track Your Order
+                  My Equipments
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"/add-equipment"}>
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Returns & Refunds
+                  Add Equipment
                 </li>
               </Link>
             </ul>
           </div>
         </div>
         <div className="md:col-span-2">
-          <h4>Legal</h4>
+          <h4>Follow us on</h4>
           <div className="mt-4 text-muted-foreground/70">
             <ul className="flex flex-col gap-2">
-              <Link to={"/auth/signin"}>
+              <Link to={"https://facebook.com"} target="_blank">
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Privacy Policy
+                  Facebook
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"https://youtube.com"} target="_blank">
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Terms & Conditions
+                  Youtube
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"https://instagram.com"} target="_blank">
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Refund Policy
+                  Instagram
                 </li>
               </Link>
-              <Link to={"/auth/signin"}>
+              <Link to={"https://linkedin.com"} target="_blank">
                 <li className="hover:text-primary cursor-pointer hover:underline w-fit">
-                  Cookies Policy
+                  Linkedin
                 </li>
               </Link>
             </ul>
@@ -141,17 +143,14 @@ function Footer() {
         <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row gap-5 md:gap-0 justify-between items-center">
           <p>Gear Arena © 2024 Developed by Naim</p>
           <div className="flex items-center gap-4">
-            <a href="https://facebook.com">
-              <FaFacebook className="hover:text-black" size={22} color="blue" />
+            <a target="_blank" href="https://github.com/follownaim">
+              <FaGithub
+                className="hover:text-black text-black dark:text-white"
+                size={22}
+              />
             </a>
-            <a href="https://instagram.com">
-              <FaInstagram className="hover:text-black" size={22} color="red" />
-            </a>
-            <a href="https://youtube.com">
-              <FaYoutube className="hover:text-black" size={22} color="red" />
-            </a>
-            <a href="https://linkedin.com">
-              <FaLinkedin className="hover:text-black" size={22} color="blue" />
+            <a target="_blank" href="https://linkedin.com/in/ataurrahmannaim">
+              <Linkedin className="hover:text-black" size={22} color="blue" />
             </a>
           </div>
         </div>

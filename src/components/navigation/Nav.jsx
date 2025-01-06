@@ -34,17 +34,16 @@ function Nav() {
   }, [pathname]);
   return (
     <div>
-      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed w-screen left-1/2 -translate-x-1/2 top-0 z-50 bg-white/40 backdrop-blur-md dark:bg-black/40 overflow-auto">
+      <div className="container flex justify-between items-center py-2 px-4 border-b border-border fixed w-screen left-1/2 -translate-x-1/2 top-0 z-50 bg-white/40 backdrop-blur-md dark:bg-black/40 h-auto">
         <div>
           <Link to={"/"}>
             <h1 className="font-semibold text-2xl">GearArena</h1>
           </Link>
         </div>
-
         <div
-          className={`absolute md:static w-full bg-black/30 backdrop-blur-lg md:backdrop-blur-none py-10 md:py-0  ${
-            isOpen ? "translate-y-52" : "-translate-y-full"
-          } duration-300 ease-in-out md:w-fit transition-transform md:bg-transparent md:translate-y-0 font-normal  z-40 left-0`}
+          className={`absolute md:static w-full dark:bg-white dark:text-black bg-black text-white backdrop-blur-lg md:backdrop-blur-none py-10 md:py-0  ${
+            isOpen ? "translate-y-60" : "-translate-y-full"
+          } duration-300 ease-in-out md:w-fit transition-transform md:bg-transparent md:translate-y-0 font-normal  z-[9999] left-0`}
         >
           <ul
             className="flex flex-col md:flex-row items-center gap-6"
@@ -64,9 +63,16 @@ function Nav() {
             </NavLink>
 
             {user && (
-              <Button className="block md:hidden" onClick={handleLogout}>
-                Log Out
-              </Button>
+              <>
+                <NavLink to={"/add-equipment"}>Add Equiement</NavLink>
+                <NavLink to={"/my-equipments"}>My Equipement</NavLink>
+                <Button
+                  className="block md:hidden text-black dark:text-white bg-white dark:bg-black"
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </Button>
+              </>
             )}
           </ul>
         </div>

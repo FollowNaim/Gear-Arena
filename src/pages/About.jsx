@@ -12,7 +12,7 @@ function About() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="flex flex-col">
             <div className="mb-6">
-              <h4 className="text-3xl font-bold">
+              <h4 className="text-2xl md:text-3xl font-bold">
                 <p className="text-base font-normal pb-3">
                   At Gear Arena, we are more than just an equipment store—
                 </p>{" "}
@@ -32,14 +32,14 @@ function About() {
           </div>
           <div className="flex flex-col">
             <div className="grow">
-              <div className="flex items-center gap-4">
+              <div className="grid grid-cols-2 items-center gap-4">
                 <img
-                  className="w-1/2 h-40 object-cover rounded-md"
+                  className="h-40 object-cover rounded-md"
                   src={about3}
                   alt=""
                 />
                 <img
-                  className="w-1/2 h-40 object-cover rounded-md"
+                  className="h-40 object-cover rounded-md"
                   src={about4}
                   alt=""
                 />
@@ -53,7 +53,7 @@ function About() {
                   confidence.
                 </p>
               </div>
-              <div className="flex items-center justify-between mt-4 pr-6 ">
+              <div className="flex items-center justify-between mt-4 pr-6 flex-wrap gap-6">
                 <div>
                   <p className="font-bold text-xl">10K+</p>
                   <p>Equipment Sold</p>

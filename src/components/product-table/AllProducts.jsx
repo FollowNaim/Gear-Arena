@@ -39,7 +39,7 @@ export default function AllProducts({ products, setProducts }) {
           </SelectContent>
         </Select>
       </div>
-      <div className="grid grid-cols-4 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {products?.map((product) => {
           return <Product product={product} key={product._id} />;
         })}

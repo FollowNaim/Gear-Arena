@@ -16,6 +16,7 @@ function AllSports() {
       });
   }, []);
   if (isLoading) return <Spinner />;
+  console.log(products);
   return (
     <div>
       <SEO title={"All-Sports | Gear Arena"} />

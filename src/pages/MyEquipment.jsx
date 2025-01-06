@@ -1,12 +1,30 @@
 import sorryAnimation from "@/assets/animation/sorry.json";
-import MyProductCard from "@/components/my-products/MyProductCard";
 import SEO from "@/components/seo/SEO";
 import Spinner from "@/components/spinner/Spinner";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { AuthContext } from "@/provider/AuthProvider";
 import Lottie from "lottie-react";
 import { useContext, useEffect, useState } from "react";
+import { IoEllipsisHorizontal } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function MyEquipment() {
   const { user } = useContext(AuthContext);
@@ -30,6 +48,33 @@ function MyEquipment() {
         setLoading(false);
       });
   }, []);
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/products/${id}`, {
+          method: "DELETE",
+        }).then(() => {
+          {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your Equipmenthas been deleted.",
+              icon: "success",
+            });
+            setProducts(products.filter((p) => p._id !== id));
+          }
+        });
+      }
+    });
+  };
 
   if (loading) return <Spinner />;
 
@@ -67,16 +112,67 @@ function MyEquipment() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {products.map((product) => (
-              <MyProductCard
-                key={product._id}
-                roductCard
-                product={product}
-                setProducts={setProducts}
-                products={products}
-              />
-            ))}
+          <div className="">
+            <Table>
+              <TableCaption>A list of your recent invoices.</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[100px]">ID</TableHead>
+                  <TableHead>Image</TableHead>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Category</TableHead>
+                  <TableHead>Rating</TableHead>
+                  <TableHead>Price</TableHead>
+                  <TableHead className="flex justify-end text-black">
+                    Actions
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {products.map((product, i) => (
+                  <TableRow key={product._id}>
+                    <TableCell className="font-medium">{i + 1}</TableCell>
+                    <TableCell>
+                      <img
+                        className="size-10 rounded-full object-cover"
+                        src={product.image}
+                        alt=""
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <h4>{product.itemName}</h4>
+                    </TableCell>
+                    <TableCell>{product.categoryName}</TableCell>
+                    <TableCell>{product.rating}</TableCell>
+                    <TableCell>{product.price}</TableCell>
+                    <TableCell className="text-right">
+                      <DropdownMenu modal={false}>
+                        <DropdownMenuTrigger>
+                          <IoEllipsisHorizontal />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="mr-4">
+                          <DropdownMenuLabel>My Equipment</DropdownMenuLabel>
+                          <DropdownMenuSeparator></DropdownMenuSeparator>
+                          <Link to={`/products/${product._id}`}>
+                            <DropdownMenuItem>View Details</DropdownMenuItem>
+                          </Link>
+                          <Link to={`/products/update/${product._id}`}>
+                            <DropdownMenuItem>
+                              Update Equipment
+                            </DropdownMenuItem>
+                          </Link>
+                          <DropdownMenuItem
+                            onClick={() => handleDelete(product._id)}
+                          >
+                            Delete Equipement
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         )}
       </div>
