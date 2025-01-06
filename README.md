@@ -27,7 +27,7 @@ Explore the live site: [GearArena](https://gear-arena.vercel.app/)
 - **Authentication**: Firebase Authentication
 - **Hosting**:
   - Client: [Vercel](https://gear-arena.vercel.app//)
-  - Server: [Vercel](http://localhost:5000/)
+  - Server: [Vercel](https://geararena-server.vercel.ap/)
 
 ## 📋 Pages Overview
 
@@ -87,7 +87,7 @@ Sensitive credentials like Firebase config and MongoDB keys are securely stored 
 ## 🏗️ Deployment
 
 - **Client**: [Vercel](https://gear-arena.vercel.app/)
-- **Server**: [Vercel](http://localhost:5000/)
+- **Server**: [Vercel](https://geararena-server.vercel.ap/)
 
 ## 🤝 Contribution
 

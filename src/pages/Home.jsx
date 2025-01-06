@@ -1,4 +1,5 @@
 import Products from "@/components/home-products/Products";
+import BoostCreativity from "@/components/home/Boost-Creativity";
 import SEO from "@/components/seo/SEO";
 import Sliders from "@/components/slider/Sliders";
 import Spinner from "@/components/spinner/Spinner";
@@ -6,14 +7,13 @@ import WhyChoose from "@/components/why-choose/WhyChoose";
 import WorldWide from "@/components/world-wide/WorldWide";
 import { useEffect, useState } from "react";
 import AboutUs from "../components/about-us/AboutUs";
-import BoostCreativity from "@/components/home/Boost-Creativity";
 
 function Home() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/products?limit=8")
+    fetch("https://geararena-server.vercel.ap/products?limit=8")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

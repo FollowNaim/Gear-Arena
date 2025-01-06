@@ -31,7 +31,7 @@ export default function UpdateEquipment() {
   const params = useParams();
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/products/${params.id}`)
+    fetch(`https://geararena-server.vercel.ap/products/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -81,7 +81,7 @@ export default function UpdateEquipment() {
 
     toast
       .promise(
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://geararena-server.vercel.ap/products/${_id}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
