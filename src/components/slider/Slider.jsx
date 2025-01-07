@@ -17,7 +17,7 @@ export default function Slider({ heading, bold, description, image }) {
           </h4>
           <p
             className="pt-3 md:pt-5
-           text-muted/60 dark:text-white/70 md:pr-6 "
+           text-muted-foreground md:pr-6 "
           >
             {description}
           </p>

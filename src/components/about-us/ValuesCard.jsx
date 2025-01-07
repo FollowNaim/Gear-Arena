@@ -6,9 +6,7 @@ function ValuesCard({ text, bold, img, description }) {
         <h3 className="text-xl font-semibold mt-6">
           <span className="text-destructive">{bold}</span> {text}
         </h3>
-        <p className="text-secondary-foreground dark:text-black/80 mt-2">
-          {description}
-        </p>
+        <p className="text-muted-foreground  mt-2">{description}</p>
       </div>
     </div>
   );
