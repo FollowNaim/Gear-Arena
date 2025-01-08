@@ -90,7 +90,7 @@ Sensitive credentials like Firebase config and MongoDB keys are securely stored 
 
 ---
 
-## Dependencies
+## 📦 Dependencies
 
 - **@radix-ui/react-accordion**: ^1.2.2 – A Radix UI component for creating collapsible accordion sections.
 - **@radix-ui/react-avatar**: ^1.1.2 – A Radix UI component for displaying user avatars.
@@ -124,7 +124,7 @@ Sensitive credentials like Firebase config and MongoDB keys are securely stored 
 
 ---
 
-## Dev Dependencies
+## 📦 Dev Dependencies
 
 - **@eslint/js**: ^9.15.0 – ESLint core JavaScript functionality.
 - **@types/react**: ^18.3.12 – TypeScript definitions for React.
