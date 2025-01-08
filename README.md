@@ -144,8 +144,8 @@ Sensitive credentials like Firebase config and MongoDB keys are securely stored 
 1. **Clone the repository.**
 
 ```bash
-   git clone https://github.com/FollowNaim/LearnMate
-   cd LearnMate
+   git clone https://github.com/FollowNaim/Gear-Arena
+   cd Gear-Arena
 ```
 
 2. **Install Dependencies**
@@ -157,7 +157,6 @@ npm install
 3. **Setup Environment Variables**
 
 - create .env.local in the root directory.
-- Add `VITE_API_URL` variable and put your server url here.
 - create a firebase project and add config here
 - firebase config will look like
 
@@ -186,17 +185,6 @@ npm run dev
 - Firebase Authentication requires authorized domains to ensure secure access.
 
 ---
-
-## 🤝 Contributions
-
-Contributions are welcome! Fork this repository, make your changes, and submit a pull request.
-
----
-
-## 🏗️ Deployment
-
-- **Client**: [Vercel](https://gear-arena.vercel.app/)
-- **Server**: [Vercel](https://geararena-server.vercel.app/)
 
 ## 🤝 Contribution
 
